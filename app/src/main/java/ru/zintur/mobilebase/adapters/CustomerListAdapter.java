@@ -55,9 +55,4 @@ public class CustomerListAdapter extends BaseAdapter {
 
         return view;
     }
-
-
-
-
-
 }

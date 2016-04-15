@@ -13,12 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
-import ru.zintur.mobilebase.schema.utils.BaseImporter;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.utils.DatabaseTest;
+import ru.zintur.mobilebase.schema.utils.BaseImporter;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -116,5 +114,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
-
 }

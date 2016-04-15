@@ -39,7 +39,15 @@ public class DatabaseTest {
                 Log.i(LOG_TAG, "\t\t+ "+contact.getName());
             }
         }
+       System.out.println("*********************");
+       System.out.println("Customer by Id Test:");
+       Customer customerById = customerDao.queryBuilder().where(CustomerDao.Properties.Id.eq(233)).unique();
+
+       System.out.println(customerById.getTitleFull());
+
     }
+
+
 
 }
 

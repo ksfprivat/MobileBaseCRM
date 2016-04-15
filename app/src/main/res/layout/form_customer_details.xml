@@ -11,6 +11,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:editable="false"
         android:id="@+id/etShortTitle" />
 
@@ -22,7 +23,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="none"
         android:editable="false"
+        android:textSize="18sp"
         android:id="@+id/etFullTitle" />
 
 </LinearLayout>

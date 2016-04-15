@@ -55,7 +55,8 @@ public class DataSource {
 
     }
 
-    public static Customer getCustomersById(int id) {
-        return (Customer) getDaoSession().getCustomerDao().queryBuilder().where(ContactDao.Properties.Id.eq(id)).list();
+    public static Customer getCustomersById(Long id) {
+        return (Customer) getDaoSession().getCustomerDao().queryBuilder().where(CustomerDao.Properties.Id.eq(id)).unique();
+
     }
 }

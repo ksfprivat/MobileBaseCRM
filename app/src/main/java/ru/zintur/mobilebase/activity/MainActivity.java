@@ -1,4 +1,4 @@
-package ru.zintur.mobilebase;
+package ru.zintur.mobilebase.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,9 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 
+import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
 import ru.zintur.mobilebase.schema.utils.BaseImporter;
 import ru.zintur.mobilebase.schema.DataSource;
+import ru.zintur.mobilebase.schema.utils.DatabaseTest;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         initToolbar();
         intNavigationBar();
         initTabs();
+
     }
 
     @Override
@@ -44,12 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //initCustomerFragment();
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        DataSource.closeDatabase();
     }
 
     private void initToolbar() {

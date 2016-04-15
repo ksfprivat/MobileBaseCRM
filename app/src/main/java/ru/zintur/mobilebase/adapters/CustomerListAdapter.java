@@ -49,7 +49,6 @@ public class CustomerListAdapter extends BaseAdapter {
             view = ltInflater.inflate(R.layout.list_item_customer, parent, false);
         }
 
-
         Customer customer = (Customer) getItem(position);
         ((TextView) view.findViewById(R.id.txtTitleShort)).setText(customer.getTitleShort());
         ((TextView) view.findViewById(R.id.txtAddress)).setText(customer.getCity());

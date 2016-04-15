@@ -18,7 +18,7 @@ public class CustomerDetails extends AppCompatActivity {
 
         String customerId = intent.getStringExtra("customerId");
 
-        Log.d("xxx", String.valueOf(customerId));
+        Log.d("TagX", String.valueOf(customerId));
 
     }
 }

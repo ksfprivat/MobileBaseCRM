@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MobileBase</string>
+
+    <string name="app_title">Base</string>
+    <string name="app_subtitle">mobile</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_item_customers">Организации</string>
+    <string name="nav_item_contacts">Контакты</string>
+    <string name="nav_item_contracts">Контракты</string>
+    <string name="nav_item_settings">Настройки</string>
+    <string name="nav_item_update">Обновления</string>
+    <string name="nav_item_nfo">Информация</string>
+
+    <string name="tab_item_customers">Организации</string>
+    <string name="tab_item_contacts">Контакты</string>
+    <string name="tab_item_contracts">Контракты</string>
+
+    <string name="navigation_close">Закрыть</string>
+    <string name="navigation_open">Открыть</string>
+    <string name="txtTitleShort">txtTitleShort</string>
+    <string name="txtAddress">txtAddress</string>
+
+
+</resources>

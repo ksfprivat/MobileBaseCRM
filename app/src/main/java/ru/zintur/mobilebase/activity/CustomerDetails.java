@@ -20,12 +20,18 @@ public class CustomerDetails extends AppCompatActivity {
         Intent intent = getIntent();
         Long customerId = intent.getLongExtra("customerId", 0);
 
-        EditText etTitleShort = (EditText) findViewById(R.id.etShortTitle);
-        EditText etTitleFull = (EditText) findViewById(R.id.etFullTitle);
+        EditText etTitleShort = (EditText) findViewById(R.id.etTitleShort);
+        EditText etTitleFull = (EditText) findViewById(R.id.etTitleFull);
+        EditText etRegion = (EditText) findViewById(R.id.etRegion);
+        EditText etCity = (EditText) findViewById(R.id.etCity);
+        EditText etAddress = (EditText) findViewById(R.id.etAddress);
+
 
         etTitleShort.setText(DataSource.getCustomersById(customerId).getTitleShort());
         etTitleFull.setText(DataSource.getCustomersById(customerId).getTitleFull());
+        etCity.setText(DataSource.getCustomersById(customerId).getCity()+DataSource.getCustomersById(customerId).getBuilding());
 
+        etRegion.setText("dfdf");
 
     }
 }

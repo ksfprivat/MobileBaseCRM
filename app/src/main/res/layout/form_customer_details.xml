@@ -1,31 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    android:padding="6dp"
+    tools:context="ru.zintur.uiproto.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Краткое наименование" />
-
-    <EditText
+<!--CardView Title-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_main"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:editable="false"
-        android:id="@+id/etShortTitle" />
+        app:cardCornerRadius="6dp"
+        style="@style/CardView">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Полное наименование" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:text="@string/CustomerTitleShort"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etTitleShort"
+                    android:textIsSelectable="true"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorEditText"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                   />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"
 
-    <EditText
+                android:text="@string/CustomerTitleFull"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etTitleFull"
+                    android:textIsSelectable="true"
+                    android:textColor="@color/colorEditText"
+                    android:layout_weight="1"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                     />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <!--CardView Location-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_location"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="none"
-        android:editable="false"
-        android:textSize="18sp"
-        android:id="@+id/etFullTitle" />
+        app:cardCornerRadius="6dp"
+        style="@style/CardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:text="Регион"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etRegion"
+                    android:textIsSelectable="true"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorEditText"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+
+            android:text="@string/CustomerCity"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etCity"
+                    android:textIsSelectable="true"
+                    android:textColor="@color/colorEditText"
+                    android:layout_weight="1"
+                    android:textAppearance="@android:style/TextAppearance.Medium"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+
+                android:text="@string/СustomerAddress"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etAddress"
+                    android:textIsSelectable="true"
+                    android:textColor="@color/colorEditText"
+                    android:layout_weight="1"
+                    android:textAppearance="@android:style/TextAppearance.Medium"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

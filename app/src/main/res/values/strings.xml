@@ -21,6 +21,10 @@
     <string name="navigation_open">Открыть</string>
     <string name="txtTitleShort">txtTitleShort</string>
     <string name="txtAddress">txtAddress</string>
+    <string name="CustomerTitleShort">Наименование</string>
+    <string name="CustomerTitleFull">Полное наименование</string>
+    <string name="CustomerCity">Город</string>
+    <string name="СustomerAddress">Адрес</string>
 
 
 </resources>

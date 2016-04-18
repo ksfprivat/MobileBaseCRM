@@ -54,7 +54,7 @@ public class CustomerFragment extends AbstractFragment{
         List<Customer> customers = DataSource.getCustomers();
         final CustomerListAdapter adapter = new CustomerListAdapter(container.getContext(), customers);
 
-        final ListView lvCustomers = (ListView) view.findViewById(R.id.lvCustomers);
+        ListView lvCustomers = (ListView) view.findViewById(R.id.lvCustomers);
         lvCustomers.setAdapter(adapter);
 
         lvCustomers.setOnItemClickListener(new AdapterView.OnItemClickListener() {

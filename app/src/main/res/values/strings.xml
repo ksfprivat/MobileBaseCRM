@@ -25,6 +25,9 @@
     <string name="CustomerTitleFull">Полное наименование</string>
     <string name="CustomerCity">Город</string>
     <string name="СustomerAddress">Адрес</string>
+    <string name="tvRegion">Регион</string>
+    <string name="ibShowToMap">ShotToMAp</string>
+    <string name="txtMap">Показать на карте</string>
 
 
 </resources>

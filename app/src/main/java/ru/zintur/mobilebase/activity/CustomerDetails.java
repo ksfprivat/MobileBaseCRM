@@ -37,10 +37,7 @@ public class CustomerDetails extends AppCompatActivity {
         etCity.setText(customer.getCity());
         etAddress.setText(customer.getStreet());
         etRegion.setText(customer.getDistrict());
-
-
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -52,9 +49,7 @@ public class CustomerDetails extends AppCompatActivity {
         if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-
-
- }
+         }
     }
 
 

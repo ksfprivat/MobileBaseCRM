@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MobileBase.iml" filepath="$PROJECT_DIR$/MobileBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MobileBaseCRM.iml" filepath="$PROJECT_DIR$/MobileBaseCRM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ormgenerator/ormgenerator.iml" filepath="$PROJECT_DIR$/ormgenerator/ormgenerator.iml" />
     </modules>

@@ -21,13 +21,12 @@
     <string name="navigation_open">Открыть</string>
     <string name="txtTitleShort">txtTitleShort</string>
     <string name="txtAddress">txtAddress</string>
-    <string name="CustomerTitleShort">Наименование</string>
-    <string name="CustomerTitleFull">Полное наименование</string>
-    <string name="CustomerCity">Город</string>
-    <string name="СustomerAddress">Адрес</string>
+    <string name="tvCustomerTitleShort">Наименование</string>
+    <string name="tvCustomerTitleFull">Полное наименование</string>
+    <string name="tvCustomerCity">Город</string>
+    <string name="tvCustomerAddress">Адрес</string>
     <string name="tvRegion">Регион</string>
-    <string name="ibShowToMap">ShotToMAp</string>
-    <string name="txtMap">Показать на карте</string>
+    <string name="tvShowInMap">Показать на карте</string>
 
 
 </resources>

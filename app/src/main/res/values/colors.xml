@@ -5,6 +5,6 @@
     <color name="colorAccent">#0277BD</color>
     <color name="colorBackground">#E0E0E0</color>
     <color name="colorTabIndicator">#01579B</color>
-    <color name="colorEditText">#01579B</color>
+    <color name="colorBlueText">#0288D1</color>
 
 </resources>

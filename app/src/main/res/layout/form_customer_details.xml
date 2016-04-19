@@ -34,12 +34,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/etTitleShort"
-                    android:textIsSelectable="true"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/edit_text_size"
+                    android:focusableInTouchMode="false"
                     android:inputType="textMultiLine|textNoSuggestions" />
             </LinearLayout>
             <TextView
@@ -51,19 +49,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/etTitleFull"
-                    android:textIsSelectable="true"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/edit_text_size"
+                    android:focusableInTouchMode="false"
                     android:inputType="textMultiLine|textNoSuggestions" />
             </LinearLayout>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-    <!--CardView Location-->
     <android.support.v7.widget.CardView
         android:id="@+id/card_view_location"
         android:layout_gravity="center"
@@ -86,12 +81,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/etRegion"
-                    android:textIsSelectable="true"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/edit_text_size"
+                    android:focusableInTouchMode="false"
                     android:inputType="textMultiLine|textNoSuggestions" />
             </LinearLayout>
             <TextView
@@ -103,12 +96,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/etCity"
-                    android:textIsSelectable="true"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/edit_text_size"
+                    android:focusableInTouchMode="false"
                     android:inputType="textMultiLine|textNoSuggestions" />
             </LinearLayout>
             <TextView
@@ -120,25 +111,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/etAddress"
-                    android:textIsSelectable="true"
-                    android:focusable="false"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/edit_text_size"
+                    android:focusableInTouchMode="false"
                     android:inputType="textMultiLine|textNoSuggestions" />
             </LinearLayout>
 
-            <Button
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="6dp"
-                android:text="@string/tvShowInMap"
-                android:drawableLeft="@drawable/ic_place_blue_700_24dp"
-                android:textColor="@color/colorBlueText"
-                android:textSize="16sp"
-                style="?attr/borderlessButtonStyle" />
+                android:gravity="center">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="6dp"
+                    android:background="@drawable/selector_flat_button"
+                    android:text="@string/tvShowInMap"
+                    android:paddingRight="8dp"
+                    android:drawableLeft="@drawable/ic_place_blue_700_24dp"
+                    android:textColor="@color/colorBlueText"
+
+                    style="?attr/borderlessButtonStyle" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </android.support.v7.widget.CardView>

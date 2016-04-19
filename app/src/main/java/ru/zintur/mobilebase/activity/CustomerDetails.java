@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 import ru.zintur.mobilebase.R;
@@ -37,12 +39,20 @@ public class CustomerDetails extends AppCompatActivity {
         etCity.setText(customer.getCity());
         etAddress.setText(customer.getStreet());
         etRegion.setText(customer.getDistrict());
+
+        registerForContextMenu(etTitleShort);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add("Copy");
     }
 
     private void initActionBar() {

@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/navigator_customer_item"
-        android:orderInCategory="1"
-        android:title="@string/nav_item_customers"
-        android:icon="@drawable/ic_bank"/>
-    <item
-        android:id="@+id/navigator_contact_item"
-        android:orderInCategory="1"
-        android:title="@string/nav_item_contacts"
-        android:icon="@drawable/ic_account_multiple"/>
-    <item
-        android:id="@+id/navigator_contract_item"
-        android:orderInCategory="1"
-        android:title="@string/nav_item_contracts"
-        android:icon="@drawable/ic_currency_rub"/>
-    <item
-        android:orderInCategory="1"
-        android:title="@string/nav_item_settings"
-        android:icon="@drawable/ic_settings"/>
-    <item
-        android:orderInCategory="1"
-        android:title="@string/nav_item_update"
-        android:icon="@drawable/ic_refresh"/>
-    <item
-        android:orderInCategory="1"
-        android:title="@string/nav_item_nfo"
-        android:icon="@drawable/ic_information_outline"/>
+
+    <group android:id="@+id/menu_category" >
+        <item
+            android:id="@+id/navigator_customer_item"
+            android:orderInCategory="1"
+            android:title="@string/nav_item_customers"
+            android:icon="@drawable/ic_bank"/>
+        <item
+            android:id="@+id/navigator_contact_item"
+            android:orderInCategory="1"
+            android:title="@string/nav_item_contacts"
+            android:icon="@drawable/ic_account_multiple"/>
+        <item
+            android:id="@+id/navigator_contract_item"
+            android:orderInCategory="1"
+            android:title="@string/nav_item_contracts"
+            android:icon="@drawable/ic_currency_rub"/>
+    </group>
+    <group android:id="@+id/menu_operation" >
+        <item
+            android:orderInCategory="1"
+            android:title="@string/nav_item_settings"
+            android:icon="@drawable/ic_settings"/>
+        <item
+            android:orderInCategory="1"
+            android:title="@string/nav_item_update"
+            android:icon="@drawable/ic_refresh"/>
+        <item
+            android:orderInCategory="1"
+            android:title="@string/nav_item_nfo"
+            android:icon="@drawable/ic_information_outline"/>
+    </group>
 </menu>

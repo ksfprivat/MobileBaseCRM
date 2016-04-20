@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/form_customer_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="@color/colorBackground"
-    android:padding="6dp">
+    android:padding="6dp"
+    tools:context=".activity.CustomerDetails">
 
 <!--CardView Title-->
     <android.support.v7.widget.CardView
@@ -29,36 +32,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tvCustomerTitleShort"/>
-            <LinearLayout
-                android:orientation="horizontal"
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/etTitleShort"
-                    android:focusableInTouchMode="false"
-                    android:inputType="textMultiLine|textNoSuggestions" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/etTitleShort"
+                android:focusableInTouchMode="false"
+                android:longClickable="true"
+                android:inputType="textMultiLine|textNoSuggestions" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="@string/tvCustomerTitleFull"/>
-            <LinearLayout
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/etTitleFull"
-                    android:focusableInTouchMode="false"
-                    android:inputType="textMultiLine|textNoSuggestions" />
-            </LinearLayout>
-
+                android:layout_height="wrap_content"
+                android:id="@+id/etTitleFull"
+                android:focusableInTouchMode="false"
+                android:inputType="textMultiLine|textNoSuggestions" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+    <!-- CardView Location -->
     <android.support.v7.widget.CardView
         android:id="@+id/card_view_location"
         android:layout_gravity="center"
@@ -76,47 +70,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tvRegion"/>
-            <LinearLayout
-                android:orientation="horizontal"
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/etRegion"
-                    android:focusableInTouchMode="false"
-                    android:inputType="textMultiLine|textNoSuggestions" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/etRegion"
+                android:focusableInTouchMode="false"
+                android:inputType="textMultiLine|textNoSuggestions" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-            android:text="@string/tvCustomerCity"/>
-            <LinearLayout
+                android:text="@string/tvCustomerCity"/>
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/etCity"
-                    android:focusableInTouchMode="false"
-                    android:inputType="textMultiLine|textNoSuggestions" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/etCity"
+                android:focusableInTouchMode="false"
+                android:inputType="textMultiLine|textNoSuggestions" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="@string/tvCustomerAddress"/>
-            <LinearLayout
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/etAddress"
-                    android:focusableInTouchMode="false"
-                    android:inputType="textMultiLine|textNoSuggestions" />
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/etAddress"
+                android:focusableInTouchMode="false"
+                android:inputType="textMultiLine|textNoSuggestions" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +110,6 @@
                     android:paddingRight="8dp"
                     android:drawableLeft="@drawable/ic_place_blue_700_24dp"
                     android:textColor="@color/colorBlueText"
-
                     style="?attr/borderlessButtonStyle" />
             </LinearLayout>
 

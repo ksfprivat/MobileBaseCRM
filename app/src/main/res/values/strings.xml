@@ -27,6 +27,7 @@
     <string name="tvCustomerAddress">Адрес</string>
     <string name="tvRegion">Регион</string>
     <string name="tvShowInMap">Показать на карте</string>
+    <string name="ctx_menu_item_copy">Копировать</string>
 
 
 </resources>

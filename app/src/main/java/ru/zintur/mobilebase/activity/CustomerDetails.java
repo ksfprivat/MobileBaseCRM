@@ -1,8 +1,12 @@
 package ru.zintur.mobilebase.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +21,8 @@ import ru.zintur.mobilebase.schema.domains.Customer;
 import ru.zintur.mobilebase.utils.Utils;
 
 public class CustomerDetails extends AppCompatActivity {
+
+    Drawable originalDrawable;
 
     // HashMap of all EditText elements
     SparseArray<EditText> fields = new SparseArray<>();
@@ -38,18 +44,55 @@ public class CustomerDetails extends AppCompatActivity {
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
+            EditText field = (EditText) v.findViewById(v.getId());
+
+        field.selectAll();
+            field.setFocusable(true);
             String str = ((EditText) v.findViewById(v.getId())).getText().toString();
             Toast.makeText(CustomerDetails.this, str, Toast.LENGTH_SHORT).show();
+
+
+
             showPopupMenu(v);
             return false;
         }
     };
 
-    private void showPopupMenu(View v) {
+    private void showPopupMenu(final View v) {
         PopupMenu popupMenu = new PopupMenu(this, v);
         popupMenu.inflate(R.menu.menu_context);
+        EditText field = (EditText) v.findViewById(v.getId());
+        field.selectAll();
+        field.setFocusable(true);
+        // ! HACK ! - Customize standard style popup menu - force show icon
+        Utils.setPopupMenuForceIconShow(popupMenu);
+        popupMenu.setOnMenuItemClickListener(popupMenuItemClickListener);
+
+
+        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
+
+            @Override
+            public void onDismiss(PopupMenu menu) {
+
+                EditText field = (EditText) v.findViewById(v.getId());
+
+
+            }
+        });
+
         popupMenu.show();
     }
+
+
+    PopupMenu.OnMenuItemClickListener popupMenuItemClickListener = new PopupMenu.OnMenuItemClickListener() {
+        @Override
+        public boolean onMenuItemClick(MenuItem item) {
+            if (item.getItemId() == R.id.menu_context_copy) {
+                Toast.makeText(CustomerDetails.this, "Copy", Toast.LENGTH_SHORT).show();
+            }
+            return false;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -66,11 +109,15 @@ public class CustomerDetails extends AppCompatActivity {
 
     private void  initFields(Customer customer) {
 
+
+
         EditText etTitleShort = (EditText) findViewById(R.id.etTitleShort);
         EditText etTitleFull = (EditText) findViewById(R.id.etTitleFull);
         EditText etRegion = (EditText) findViewById(R.id.etRegion);
         EditText etCity = (EditText) findViewById(R.id.etCity);
         EditText etAddress = (EditText) findViewById(R.id.etAddress);
+
+        originalDrawable = etTitleShort.getBackground();
 
         setTitle(customer.getTitleShort());
         etTitleShort.setText(customer.getTitleShort());

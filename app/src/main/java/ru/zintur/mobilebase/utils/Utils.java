@@ -5,6 +5,10 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.PopupMenu;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 
 // UI utilities
@@ -27,5 +31,19 @@ public class Utils {
     }
 
 
+    // ! HACK ! Use Java Reflection for force standard popup menu icons show
+    public static void setPopupMenuForceIconShow(PopupMenu popupMenu) {
+        try {
+            Field field = popupMenu.getClass().getDeclaredField("mPopup");
+            field.setAccessible(true);
+            Object menuPopupHelper = field.get(popupMenu);
+            Class<?> cls = Class.forName("com.android.internal.view.menu.MenuPopupHelper");
+            Method method = cls.getDeclaredMethod("setForceShowIcon", boolean.class);
+            method.setAccessible(true);
+            method.invoke(menuPopupHelper, true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

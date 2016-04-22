@@ -15,7 +15,6 @@ import java.lang.reflect.Method;
 
 public class Utils {
 
-
     // Find all EdiText on Layout (with all child) and put him in SparseArray
     public static void findAllEditTexts(ViewGroup viewGroup, SparseArray<EditText> fields) {
         int count = viewGroup.getChildCount();

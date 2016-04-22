@@ -16,9 +16,6 @@
         <item name="android:src">@drawable/ic_menu_white_36dp</item>
     </style>
 
-    <style name="CustomHomeButton"  parent="AppTheme">
-        <item name="android:homeAsUpIndicator">@drawable/ic_bank</item>
-    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

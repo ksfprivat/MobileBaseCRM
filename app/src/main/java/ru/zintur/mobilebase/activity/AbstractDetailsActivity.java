@@ -1,6 +1,8 @@
 package ru.zintur.mobilebase.activity;
 
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.view.MenuItem;
@@ -15,7 +17,10 @@ import ru.zintur.mobilebase.utils.Utils;
 
 public class AbstractDetailsActivity extends AppCompatActivity{
 
-    // HashMap of all EditText elements
+
+    final private static String TAG = "CUSTOMER_FORM";
+
+    // HashMap of all EditText elements (Form FIELDS)
    SparseArray<EditText> fields = new SparseArray<>();
 
    public void initActionBar() {
@@ -37,34 +42,37 @@ public class AbstractDetailsActivity extends AppCompatActivity{
 
 
    private void showPopupMenu(View v) {
+
       PopupMenu popupMenu = new PopupMenu(this, v);
-      popupMenu.inflate(R.menu.menu_context);
+      popupMenu.inflate(R.menu.menu_popup);
       // ! HACK ! - Show item icon in popup menu
        Utils.setPopupMenuForceIconShow(popupMenu);
 
-       popupMenu.setOnMenuItemClickListener(popupMenuItemClickListener);
+       final EditText field = (EditText) v.findViewById(v.getId());
+
+       popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+           @Override
+           public boolean onMenuItemClick(MenuItem item) {
+               if (item.getItemId() == R.id.menu_popup_item_copy) {
+
+                   ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                   ClipData clip = ClipData.newPlainText(TAG, field.getText().toString());
+                   clipboard.setPrimaryClip(clip);
+               }
+               return false;
+           }
+       });
 
       popupMenu.show();
    }
 
 
 
-    PopupMenu.OnMenuItemClickListener popupMenuItemClickListener = new PopupMenu.OnMenuItemClickListener() {
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        if (item.getItemId() == R.id.menu_popup_item_copy) {
-            Toast.makeText(AbstractDetailsActivity.this, "HelpFull", Toast.LENGTH_SHORT).show();
-        }
-         return false;
-        }
-    };
-
-
    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
       @Override
       public boolean onLongClick(View v) {
-         String str = ((EditText) v.findViewById(v.getId())).getText().toString();
-          Toast.makeText(AbstractDetailsActivity.this, str, Toast.LENGTH_SHORT).show();
+
+         EditText field = (EditText) v.findViewById(v.getId());
          showPopupMenu(v);
          return false;
       }

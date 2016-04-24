@@ -2,11 +2,13 @@ package ru.zintur.mobilebase.fragments;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import ru.zintur.mobilebase.R;
 
@@ -33,8 +35,10 @@ public class ContractFragment extends AbstractFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(LAYOUT, container, false);
 
-       return inflater.inflate(LAYOUT, container, false);
+
+        return view;
     }
 
 }

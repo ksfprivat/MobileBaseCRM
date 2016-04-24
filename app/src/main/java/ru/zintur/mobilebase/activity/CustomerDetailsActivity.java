@@ -2,7 +2,10 @@ package ru.zintur.mobilebase.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.schema.DataSource;
@@ -39,4 +42,6 @@ public class CustomerDetailsActivity extends AbstractDetailsActivity {
         etAddress.setText(customer.getStreet());
         etRegion.setText(customer.getDistrict());
     }
+
+
 }

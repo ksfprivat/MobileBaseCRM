@@ -10,6 +10,7 @@ import ru.zintur.mobilebase.schema.dao.ContactDao;
 import ru.zintur.mobilebase.schema.dao.CustomerDao;
 import ru.zintur.mobilebase.schema.dao.DaoMaster;
 import ru.zintur.mobilebase.schema.dao.DaoSession;
+import ru.zintur.mobilebase.schema.domains.Contact;
 import ru.zintur.mobilebase.schema.domains.Customer;
 
 public class DataSource {
@@ -56,7 +57,11 @@ public class DataSource {
     }
 
     public static Customer getCustomersById(Long id) {
-        return (Customer) getDaoSession().getCustomerDao().queryBuilder().where(CustomerDao.Properties.Id.eq(id)).unique();
+        return getDaoSession().getCustomerDao().queryBuilder().where(CustomerDao.Properties.Id.eq(id)).unique();
 
+    }
+
+    public static List<Contact> getContacts() {
+        return getDaoSession().getContactDao().queryBuilder().orderAsc(ContactDao.Properties.Name).list();
     }
 }

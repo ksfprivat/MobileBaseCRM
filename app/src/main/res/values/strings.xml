@@ -28,6 +28,9 @@
     <string name="tvRegion">Регион</string>
     <string name="tvShowInMap">Показать на карте</string>
     <string name="ctx_menu_item_copy">Копировать</string>
+    <string name="txtName">Имя</string>
+    <string name="txtCompany">Оргазация</string>
+    <string name="txtStatus">Должность</string>
 
 
 </resources>

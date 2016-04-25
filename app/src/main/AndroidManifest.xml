@@ -19,7 +19,7 @@
         </activity>
 
         <activity android:name=".activity.CustomerDetailsActivity"/>
-
+        <activity android:name=".activity.CustomerActivity"/>
     </application>
 
 </manifest>

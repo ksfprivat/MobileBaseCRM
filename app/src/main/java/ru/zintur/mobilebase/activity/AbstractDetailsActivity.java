@@ -3,6 +3,7 @@ package ru.zintur.mobilebase.activity;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.view.MenuItem;
@@ -32,7 +33,8 @@ public class AbstractDetailsActivity extends AppCompatActivity{
 
    public void initFields() {
       // Set longClickListener or all EditText in Layout
-      LinearLayout customerForm = (LinearLayout) findViewById(R.id.form_customer_details);
+      LinearLayout customerForm = (LinearLayout) findViewById(R.id.fragment_customer_details);
+      customerForm.setBackgroundColor(Color.RED);
       Utils.findAllEditTexts(customerForm, fields);
       for(int i = 0; i < fields.size(); i++) {
          int key = fields.keyAt(i);

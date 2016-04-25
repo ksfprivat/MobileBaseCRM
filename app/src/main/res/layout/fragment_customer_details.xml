@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/form_customer_details"
+    android:id="@+id/fragment_customer_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +12,7 @@
     android:orientation="vertical"
     android:background="@color/colorBackground"
     android:padding="6dp"
-    tools:context=".activity.CustomerDetailsActivity">
+    tools:context=".activity.CustomerActivity">
 
 
 <!--CardView Title-->

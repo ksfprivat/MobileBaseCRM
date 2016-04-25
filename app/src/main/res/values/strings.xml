@@ -16,6 +16,7 @@
     <string name="tab_item_customers">Организации</string>
     <string name="tab_item_contacts">Контакты</string>
     <string name="tab_item_contracts">Контракты</string>
+    <string name="customer_details_tab_item_customers">Организация</string>
 
     <string name="navigation_close">Закрыть</string>
     <string name="navigation_open">Открыть</string>

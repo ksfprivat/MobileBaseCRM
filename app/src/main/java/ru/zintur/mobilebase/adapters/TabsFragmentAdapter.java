@@ -15,9 +15,6 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
 
    private static SparseArray<AbstractFragment> tabs;
 
-
-
-
     public TabsFragmentAdapter(Context ctx, FragmentManager fm) {
         super(fm);
         tabs = new SparseArray<>();
@@ -30,7 +27,6 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         return tabs.get(position).getTitle();
-
     }
 
     @Override

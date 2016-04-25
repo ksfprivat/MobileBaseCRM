@@ -64,4 +64,6 @@ public class DataSource {
     public static List<Contact> getContacts() {
         return getDaoSession().getContactDao().queryBuilder().orderAsc(ContactDao.Properties.Name).list();
     }
+
+
 }

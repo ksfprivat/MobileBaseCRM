@@ -22,11 +22,16 @@ public class ContactFragment extends AbstractFragment{
     private static final int LAYOUT = R.layout.fragment_contact;
     private static final int TITLE = R.string.tab_item_contacts;
 
+    private static Long _customerId;
+
     public ContactFragment() {
         // Default constructor
     }
 
-    public static ContactFragment getInstance(Context ctx) {
+    public static ContactFragment getInstance(Context ctx, Long customerId) {
+
+        _customerId = customerId;
+
         Bundle args = new Bundle();
         ContactFragment fragment = new ContactFragment();
 
@@ -43,7 +48,14 @@ public class ContactFragment extends AbstractFragment{
 
         View view = inflater.inflate(LAYOUT, container, false);
 
-        List<Contact> contacts = DataSource.getContacts();
+        List<Contact> contacts;
+
+        if (_customerId != null)
+            contacts = DataSource.getContactsByCustomerId(_customerId);
+        else
+            contacts  = DataSource.getContacts();
+
+
         ContactListAdapter adapter = new ContactListAdapter(container.getContext(), contacts);
 
         ListView lvContacts = (ListView) view.findViewById(R.id.lvContacts);

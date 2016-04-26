@@ -1,140 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_customer_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    android:padding="6dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:background="@color/colorBackground"
-    android:padding="6dp"
     tools:context=".activity.CustomerActivity">
 
-
-<!--CardView Title-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view_main"
-        android:layout_gravity="center"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="6dp"
-        style="@style/CardView">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvCustomerTitleShort"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/etTitleShort"
-                android:focusableInTouchMode="false"
-                android:longClickable="true"
-                android:inputType="textMultiLine|textNoSuggestions" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvCustomerTitleFull"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/etTitleFull"
-                android:focusableInTouchMode="false"
-                android:inputType="textMultiLine|textNoSuggestions" />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
 
-    <!-- CardView Location -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view_location"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="6dp"
-        style="@style/CardView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="6dp"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvRegion"/>
-            <EditText
+            <!--CardView Title-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_main"
+                style="@style/CardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/etRegion"
-                android:focusableInTouchMode="false"
-                android:inputType="textMultiLine|textNoSuggestions" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvCustomerCity"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/etCity"
-                android:focusableInTouchMode="false"
-                android:inputType="textMultiLine|textNoSuggestions" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tvCustomerAddress"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/etAddress"
-                android:focusableInTouchMode="false"
-                android:inputType="textMultiLine|textNoSuggestions" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-                <Button
-                    android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="6dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="6dp"
-                    android:background="@drawable/selector_flat_button"
-                    android:text="@string/tvShowInMap"
-                    android:paddingRight="8dp"
-                    android:drawableLeft="@drawable/ic_place_blue_700_24dp"
-                    android:textColor="@color/colorBlueText"
-                    style="?attr/borderlessButtonStyle" />
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:padding="6dp">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCustomerTitleShort" />
+
+                    <EditText
+                        android:id="@+id/etTitleShort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:textColor="@color/colorEditText"
+                        android:inputType="textMultiLine|textNoSuggestions"
+                        android:longClickable="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCustomerTitleFull" />
+
+                    <EditText
+                        android:id="@+id/etTitleFull"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:textColor="@color/colorEditText"
+                        android:inputType="textMultiLine|textNoSuggestions" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- CardView Location -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_location"
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvRegion" />
+
+                    <EditText
+                        android:id="@+id/etRegion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:textColor="@color/colorEditText"
+                        android:inputType="textMultiLine|textNoSuggestions" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCustomerCity" />
+
+                    <EditText
+                        android:id="@+id/etCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:textColor="@color/colorEditText"
+                        android:inputType="textMultiLine|textNoSuggestions" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tvCustomerAddress" />
+
+                    <EditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:textColor="@color/colorEditText"
+                        android:inputType="textMultiLine|textNoSuggestions" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <Button
+                            style="?attr/borderlessButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_flat_button"
+                            android:drawableLeft="@drawable/ic_place_blue_700_24dp"
+                            android:drawablePadding="6dp"
+                            android:paddingRight="8dp"
+                            android:text="@string/tvShowInMap"
+                            android:textColor="@color/colorBlueText" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="6dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/LoremIpsum" />
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-
-    <!-- CardView Contacts List -->
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view_customer_contacts_list"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="6dp"
-        style="@style/CardView">
-    <LinearLayout
-        android:id="@+id/layout_customer_contacts_list"
-        android:layout_width="match_parent"
-        android:layout_height="196dp"
-        android:orientation="vertical">
-    </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-
+    </ScrollView>
 </LinearLayout>

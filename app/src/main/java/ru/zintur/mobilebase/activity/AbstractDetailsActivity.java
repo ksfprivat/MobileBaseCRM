@@ -34,8 +34,8 @@ public class AbstractDetailsActivity extends AppCompatActivity{
    public void initFields() {
       // Set longClickListener or all EditText in Layout
       LinearLayout customerForm = (LinearLayout) findViewById(R.id.fragment_customer_details);
-      customerForm.setBackgroundColor(Color.RED);
-      Utils.findAllEditTexts(customerForm, fields);
+
+     Utils.findAllEditTexts(customerForm, fields);
       for(int i = 0; i < fields.size(); i++) {
          int key = fields.keyAt(i);
          fields.get(key).setOnLongClickListener(longClickListener);

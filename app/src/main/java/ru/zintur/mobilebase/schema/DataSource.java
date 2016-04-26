@@ -66,4 +66,11 @@ public class DataSource {
     }
 
 
+    public static List<Contact> getContactsByCustomerId(Long customerId) {
+        return getDaoSession().getContactDao().queryBuilder().
+                where(ContactDao.Properties.Customer.eq(customerId)).
+                orderAsc(ContactDao.Properties.Name).list();
+    }
+
+
 }

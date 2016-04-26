@@ -8,4 +8,6 @@
     <color name="colorTabIndicator">#01579B</color>
     <color name="colorBlueText">#0288D1</color>
     <color name="colorSelectedItem">#E1F5FE</color>
+    <color name="colorEditText">#767676</color>
+
 </resources>

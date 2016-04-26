@@ -19,7 +19,7 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
         super(fm);
         tabs = new SparseArray<>();
         tabs.put(0, CustomerFragment.getInstance(ctx));
-        tabs.put(1, ContactFragment.getInstance(ctx));
+        tabs.put(1, ContactFragment.getInstance(ctx, null));
         tabs.put(2, ContractFragment.getInstance(ctx));
     }
 

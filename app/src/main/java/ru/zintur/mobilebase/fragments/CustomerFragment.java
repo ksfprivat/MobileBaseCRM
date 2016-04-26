@@ -14,7 +14,6 @@ import android.widget.ListView;
 import java.util.List;
 
 import ru.zintur.mobilebase.activity.CustomerActivity;
-import ru.zintur.mobilebase.activity.CustomerDetailsActivity;
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.schema.domains.Customer;

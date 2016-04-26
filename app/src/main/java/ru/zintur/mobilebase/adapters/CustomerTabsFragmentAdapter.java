@@ -11,16 +11,17 @@ import ru.zintur.mobilebase.fragments.ContactFragment;
 import ru.zintur.mobilebase.fragments.ContractFragment;
 import ru.zintur.mobilebase.fragments.CustomerDetailsFragment;
 import ru.zintur.mobilebase.fragments.CustomerFragment;
+import ru.zintur.mobilebase.schema.domains.Customer;
 
 public class CustomerTabsFragmentAdapter extends FragmentPagerAdapter {
 
    private static SparseArray<AbstractFragment> tabs;
 
-    public CustomerTabsFragmentAdapter(Context ctx, FragmentManager fm) {
+    public CustomerTabsFragmentAdapter(Context ctx, Long customerId, FragmentManager fm) {
         super(fm);
         tabs = new SparseArray<>();
-        tabs.put(0, CustomerDetailsFragment.getInstance(ctx));
-        tabs.put(1, ContactFragment.getInstance(ctx));
+        tabs.put(0, CustomerDetailsFragment.getInstance(ctx, customerId));
+        tabs.put(1, ContactFragment.getInstance(ctx, customerId));
         tabs.put(2, ContractFragment.getInstance(ctx));
     }
 

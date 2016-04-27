@@ -1,4 +1,4 @@
-package ru.zintur.mobilebase.fragments;
+package ru.zintur.mobilebase.fragments.details;
 
 
 import android.content.ClipData;
@@ -6,16 +6,19 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 
 import ru.zintur.mobilebase.R;
+import ru.zintur.mobilebase.fragments.AbstractFragment;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.domains.Customer;
 import ru.zintur.mobilebase.utils.Utils;
@@ -54,7 +57,7 @@ public class CustomerDetailsFragment extends AbstractFragment {
         Utils.findAllEditTexts(customerForm, fields);
         for(int i = 0; i < fields.size(); i++) {
             int key = fields.keyAt(i);
-            fields.get(key).setOnLongClickListener(longClickListener);
+            fields.get(key).setOnLongClickListener(fieldLongClickListener);
         }
     }
 
@@ -69,6 +72,16 @@ public class CustomerDetailsFragment extends AbstractFragment {
         ((EditText) view.findViewById(R.id.etAddress)).setText(customer.getStreet());
     }
 
+    private void initBottomBar(View view) {
+        // Setup bottom bar button onClick event listener
+        LinearLayout bottomBar = ((LinearLayout) view.findViewById(R.id.fragment_customer_bottom_bar));
+        for (int i = 0; i < bottomBar.getChildCount(); i++) {
+            View childView = bottomBar.getChildAt(i);
+            if (childView instanceof Button) {
+                childView.setOnClickListener(bottomBarClickListener);
+            }
+        }
+    }
 
     private void showPopupMenu(View v) {
 
@@ -94,11 +107,30 @@ public class CustomerDetailsFragment extends AbstractFragment {
         popupMenu.show();
     }
 
-    View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
+    View.OnLongClickListener fieldLongClickListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
             showPopupMenu(v);
             return false;
+        }
+    };
+
+    View.OnClickListener bottomBarClickListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+           Log.d(TAG, "ON_BUTTON_CLICK");
+
+            switch (v.getId()) {
+                case R.id.fragment_customer_btnEdit:
+                    Log.d(TAG, "ON_BUTTON_CLICK_EDIT");
+                    break;
+                case R.id.fragment_customer_btnMap:
+                    Log.d(TAG, "ON_BUTTON_CLICK_MAP");
+                    break;
+                case R.id.fragment_customer_btnDelete:
+                    Log.d(TAG, "ON_BUTTON_CLICK_DELETE");
+                    break;
+            }
         }
     };
 
@@ -110,8 +142,11 @@ public class CustomerDetailsFragment extends AbstractFragment {
         View view = inflater.inflate(LAYOUT, container, false);
 
         initFields(view, R.id.fragment_customer_details);
+        initBottomBar(view);
         fillFields(view);
 
         return view;
     }
+
+
 }

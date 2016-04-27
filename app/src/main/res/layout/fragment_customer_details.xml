@@ -7,21 +7,24 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    android:padding="6dp"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activity.CustomerActivity">
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="6dp"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
 
             <!--CardView Title-->
             <android.support.v7.widget.CardView
@@ -47,7 +50,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusableInTouchMode="false"
-                        android:textColor="@color/colorEditText"
                         android:inputType="textMultiLine|textNoSuggestions"
                         android:longClickable="true" />
 
@@ -61,7 +63,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusableInTouchMode="false"
-                        android:textColor="@color/colorEditText"
                         android:inputType="textMultiLine|textNoSuggestions" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -73,6 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="6dp"
                 app:cardCornerRadius="6dp">
 
                 <LinearLayout
@@ -91,7 +93,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusableInTouchMode="false"
-                        android:textColor="@color/colorEditText"
                         android:inputType="textMultiLine|textNoSuggestions" />
 
                     <TextView
@@ -104,7 +105,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusableInTouchMode="false"
-                        android:textColor="@color/colorEditText"
                         android:inputType="textMultiLine|textNoSuggestions" />
 
                     <TextView
@@ -117,38 +117,73 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusableInTouchMode="false"
-                        android:textColor="@color/colorEditText"
                         android:inputType="textMultiLine|textNoSuggestions" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:gravity="center">-->
 
-                        <Button
-                            style="?attr/borderlessButtonStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/selector_flat_button"
-                            android:drawableLeft="@drawable/ic_place_blue_700_24dp"
-                            android:drawablePadding="6dp"
-                            android:paddingRight="8dp"
-                            android:text="@string/tvShowInMap"
-                            android:textColor="@color/colorBlueText" />
-                    </LinearLayout>
+                        <!--<Button-->
+                            <!--style="?attr/borderlessButtonStyle"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:background="@drawable/button_flat"-->
+                            <!--android:drawableLeft="@drawable/ic_place_blue_700_24dp"-->
+                            <!--android:drawablePadding="6dp"-->
+                            <!--android:paddingRight="8dp"-->
+                            <!--android:text="@string/tvShowInMap"-->
+                            <!--android:textColor="@color/colorBlueText" />-->
+                    <!--</LinearLayout>-->
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
-                style="@style/CardView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:cardCornerRadius="6dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/LoremIpsum" />
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/fragment_customer_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark">
+        <Button
+            android:id="@+id/fragment_customer_btnEdit"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_mode_edit_white_24dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            style="?attr/borderlessButtonStyle"
+            android:text="@string/txtEdit"/>
+        <Button
+            android:id="@+id/fragment_customer_btnMap"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_location_on_white_24dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            style="?attr/borderlessButtonStyle"
+            android:text="@string/txtMap"/>
+        <Button
+            android:id="@+id/fragment_customer_btnDelete"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_delete_white_24dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            style="?attr/borderlessButtonStyle"
+            android:text="@string/txtDelete"/>
+
+    </LinearLayout>
+
+
 </LinearLayout>

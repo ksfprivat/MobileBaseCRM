@@ -9,9 +9,7 @@ import android.util.SparseArray;
 import ru.zintur.mobilebase.fragments.AbstractFragment;
 import ru.zintur.mobilebase.fragments.ContactFragment;
 import ru.zintur.mobilebase.fragments.ContractFragment;
-import ru.zintur.mobilebase.fragments.CustomerDetailsFragment;
-import ru.zintur.mobilebase.fragments.CustomerFragment;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.fragments.details.CustomerDetailsFragment;
 
 public class CustomerTabsFragmentAdapter extends FragmentPagerAdapter {
 

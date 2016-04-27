@@ -61,7 +61,6 @@ public class ContactListAdapter extends BaseAdapter {
             ((TextView) view.findViewById(R.id.txtName)).setText(contact.getName());
 
         ((TextView) view.findViewById(R.id.txtStatus)).setText(contact.getStatus());
-        ((TextView) view.findViewById(R.id.txtCompany)).setText(DataSource.getCustomersById(contact.getCustomer()).getTitleShort());
 
         return view;
     }

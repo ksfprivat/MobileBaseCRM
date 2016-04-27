@@ -9,5 +9,5 @@
     <color name="colorBlueText">#0288D1</color>
     <color name="colorSelectedItem">#E1F5FE</color>
     <color name="colorEditText">#767676</color>
-
+    <color name="colorButtonBottomBarPressed">#004d89</color>
 </resources>

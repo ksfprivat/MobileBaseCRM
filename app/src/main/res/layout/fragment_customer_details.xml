@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".activity.CustomerActivity">
+    tools:context=".activity.CustomerDetailsActivity">
 
 
     <ScrollView
@@ -182,6 +182,32 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             style="?attr/borderlessButtonStyle"
             android:text="@string/txtDelete"/>
+        <Button
+            android:id="@+id/fragment_customer_btnApply"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:visibility="gone"
+            android:tag="editCtrl"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_check_white_24dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            style="?attr/borderlessButtonStyle"
+            android:text="@string/txtApply"/>
+        <Button
+            android:id="@+id/fragment_customer_btnCancel"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:tag="editCtrl"
+            android:visibility="gone"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_cancel_white_24dp"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            style="?attr/borderlessButtonStyle"
+            android:text="@string/txtCancel"/>
 
     </LinearLayout>
 

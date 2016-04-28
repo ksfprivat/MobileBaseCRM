@@ -36,6 +36,8 @@
     <string name="txtEdit">Изменить</string>
     <string name="txtMap">Карта</string>
     <string name="txtDelete">Удалить</string>
+    <string name="txtApply">Применить</string>
+    <string name="txtCancel">Отменить</string>
 
 
 </resources>

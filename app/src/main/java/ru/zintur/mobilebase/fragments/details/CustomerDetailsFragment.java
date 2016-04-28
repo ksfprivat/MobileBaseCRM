@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -26,11 +27,15 @@ import ru.zintur.mobilebase.utils.Utils;
 public class CustomerDetailsFragment extends AbstractFragment {
 
     private static final int LAYOUT = R.layout.fragment_customer_details;
+    private static final int LAYOUT_ID = R.id.fragment_customer_details;
     private static final int TITLE = R.string.customer_details_tab_item_customers;
     private static final String TAG = "customerDetails";
 
     private static Long _customerId;
 
+    private boolean editMode = false;
+
+    View view;
     SparseArray<EditText> fields = new SparseArray<>();
 
     public CustomerDetailsFragment() {
@@ -52,9 +57,9 @@ public class CustomerDetailsFragment extends AbstractFragment {
 
     public void initFields(View view, int layoutId) {
         // Set longClickListener or all EditText in Layout
-        LinearLayout customerForm = (LinearLayout) view.findViewById(layoutId);
+        LinearLayout customerFragment = (LinearLayout) view.findViewById(layoutId);
+        fields = Utils.getFields(customerFragment);
 
-        Utils.findAllEditTexts(customerForm, fields);
         for(int i = 0; i < fields.size(); i++) {
             int key = fields.keyAt(i);
             fields.get(key).setOnLongClickListener(fieldLongClickListener);
@@ -83,6 +88,22 @@ public class CustomerDetailsFragment extends AbstractFragment {
         }
     }
 
+
+    private void setEditMode(boolean mode) {
+        editMode = mode;
+        if (!mode) {
+            InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,  0);
+        }
+
+
+        for(int i = 0; i < fields.size(); i++) {
+            int key = fields.keyAt(i);
+            fields.get(key).setFocusableInTouchMode(mode);
+            fields.get(key).clearFocus();
+        }
+    }
+
     private void showPopupMenu(View v) {
 
         PopupMenu popupMenu = new PopupMenu(getContext(), v);
@@ -91,7 +112,6 @@ public class CustomerDetailsFragment extends AbstractFragment {
         Utils.setPopupMenuForceIconShow(popupMenu);
 
         final EditText field = (EditText) v.findViewById(v.getId());
-
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -122,7 +142,7 @@ public class CustomerDetailsFragment extends AbstractFragment {
 
             switch (v.getId()) {
                 case R.id.fragment_customer_btnEdit:
-                    Log.d(TAG, "ON_BUTTON_CLICK_EDIT");
+                    setEditMode( !editMode);
                     break;
                 case R.id.fragment_customer_btnMap:
                     Log.d(TAG, "ON_BUTTON_CLICK_MAP");
@@ -139,11 +159,12 @@ public class CustomerDetailsFragment extends AbstractFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(LAYOUT, container, false);
+        view = inflater.inflate(LAYOUT, container, false);
 
-        initFields(view, R.id.fragment_customer_details);
+        initFields(view, LAYOUT_ID);
         initBottomBar(view);
         fillFields(view);
+
 
         return view;
     }

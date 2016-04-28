@@ -32,6 +32,14 @@ public class Utils {
     }
 
 
+    // Wrapper for findAllEditText
+    public static SparseArray<EditText> getFields(ViewGroup viewGroup) {
+        SparseArray<EditText> fields = new SparseArray<>();
+        findAllEditTexts(viewGroup, fields);
+        return fields;
+    }
+
+
     // ! HACK ! Use Java Reflection for force standard popup menu icons show
     public static void setPopupMenuForceIconShow(PopupMenu popupMenu) {
         try {

@@ -15,7 +15,7 @@ import ru.zintur.mobilebase.adapters.CustomerTabsFragmentAdapter;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.domains.Customer;
 
-public class CustomerActivity extends AbstractDetailsActivity {
+public class CustomerDetailsActivity extends AbstractDetailsActivity {
 
 
 

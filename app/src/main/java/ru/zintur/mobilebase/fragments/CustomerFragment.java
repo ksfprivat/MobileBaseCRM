@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import ru.zintur.mobilebase.activity.CustomerActivity;
+import ru.zintur.mobilebase.activity.CustomerDetailsActivity;
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.schema.domains.Customer;
@@ -56,7 +56,7 @@ public class CustomerFragment extends AbstractFragment{
                                     long id) {
                 Customer customer = ((Customer) adapter.getItem(position));
 //                Intent intent = new Intent(container.getContext(), CustomerDetailsActivity.class);
-                Intent intent = new Intent(container.getContext(), CustomerActivity.class);
+                Intent intent = new Intent(container.getContext(), CustomerDetailsActivity.class);
 
                 intent.putExtra("customerId", customer.getId());
                 startActivity(intent);

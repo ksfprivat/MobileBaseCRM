@@ -3,6 +3,7 @@ package ru.zintur.mobilebase.schema;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.List;
 
@@ -65,6 +66,10 @@ public class DataSource {
         return getDaoSession().getContactDao().queryBuilder().orderAsc(ContactDao.Properties.Name).list();
     }
 
+
+    public static Contact getContactById(Long id) {
+        return getDaoSession().getContactDao().queryBuilder().where(ContactDao.Properties.Id.eq(id)).unique();
+    }
 
     public static List<Contact> getContactsByCustomerId(Long customerId) {
         return getDaoSession().getContactDao().queryBuilder().

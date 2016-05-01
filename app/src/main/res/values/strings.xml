@@ -38,6 +38,9 @@
     <string name="txtDelete">Удалить</string>
     <string name="txtApply">Применить</string>
     <string name="txtCancel">Отменить</string>
+    <string name="txtCall" />
+    <string name="txtSMS">txtSMS</string>
+    <string name="txtAddToContacts">Добавить в контакты</string>
 
 
 </resources>

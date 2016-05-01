@@ -4,6 +4,7 @@ package ru.zintur.mobilebase.fragments.details;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -12,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,9 +33,8 @@ public class CustomerDetailsFragment extends AbstractFragment {
 
     private static Long _customerId;
 
-    private boolean editMode = false;
-
     View view;
+    LinearLayout bottomBar;
     SparseArray<EditText> fields = new SparseArray<>();
 
     public CustomerDetailsFragment() {
@@ -60,13 +59,13 @@ public class CustomerDetailsFragment extends AbstractFragment {
         LinearLayout customerFragment = (LinearLayout) view.findViewById(layoutId);
         fields = Utils.getFields(customerFragment);
 
-        for(int i = 0; i < fields.size(); i++) {
+        for (int i = 0; i < fields.size(); i++) {
             int key = fields.keyAt(i);
             fields.get(key).setOnLongClickListener(fieldLongClickListener);
         }
     }
 
-    private void  fillFields(View view) {
+    private void fillFields(View view) {
 
         Customer customer = DataSource.getCustomersById(_customerId);
 
@@ -79,7 +78,6 @@ public class CustomerDetailsFragment extends AbstractFragment {
 
     private void initBottomBar(View view) {
         // Setup bottom bar button onClick event listener
-        LinearLayout bottomBar = ((LinearLayout) view.findViewById(R.id.fragment_customer_bottom_bar));
         for (int i = 0; i < bottomBar.getChildCount(); i++) {
             View childView = bottomBar.getChildAt(i);
             if (childView instanceof Button) {
@@ -89,15 +87,32 @@ public class CustomerDetailsFragment extends AbstractFragment {
     }
 
 
+    private void bottomBarSwitchMode() {
+        for (int i = 0; i < bottomBar.getChildCount(); i++) {
+            View childView = bottomBar.getChildAt(i);
+            if (childView instanceof Button) {
+                if (childView.getVisibility() == View.GONE) {
+                    childView.setVisibility(View.VISIBLE);
+                } else {
+                    childView.setVisibility(View.GONE);
+                }
+            }
+        }
+    }
+
+
     private void setEditMode(boolean mode) {
-        editMode = mode;
-        if (!mode) {
-            InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,  0);
+        Utils.hideSystemSoftKeyboard(getContext(), view);
+        // on EDIT_MODE
+        if (mode) {
+            bottomBarSwitchMode();
+            // on VIEW_MODE
+        } else {
+
+            bottomBarSwitchMode();
         }
 
-
-        for(int i = 0; i < fields.size(); i++) {
+        for (int i = 0; i < fields.size(); i++) {
             int key = fields.keyAt(i);
             fields.get(key).setFocusableInTouchMode(mode);
             fields.get(key).clearFocus();
@@ -135,14 +150,14 @@ public class CustomerDetailsFragment extends AbstractFragment {
         }
     };
 
-    View.OnClickListener bottomBarClickListener = new View.OnClickListener(){
+    View.OnClickListener bottomBarClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-           Log.d(TAG, "ON_BUTTON_CLICK");
+            Log.d(TAG, "ON_BUTTON_CLICK");
 
             switch (v.getId()) {
                 case R.id.fragment_customer_btnEdit:
-                    setEditMode( !editMode);
+                    setEditMode(true);
                     break;
                 case R.id.fragment_customer_btnMap:
                     Log.d(TAG, "ON_BUTTON_CLICK_MAP");
@@ -150,9 +165,27 @@ public class CustomerDetailsFragment extends AbstractFragment {
                 case R.id.fragment_customer_btnDelete:
                     Log.d(TAG, "ON_BUTTON_CLICK_DELETE");
                     break;
+                case R.id.fragment_customer_btnApply:
+                    editApply();
+                    setEditMode(false);
+                    break;
+                case R.id.fragment_customer_btnCancel:
+                    editCancel();
+                    setEditMode(false);
+                    break;
             }
         }
     };
+
+    // Temporary dummy function
+    private void editCancel() {
+        Log.d(TAG, "EDIT_CANCEL");
+    }
+
+    // Temporary dummy function
+    private void editApply() {
+        Log.d(TAG, "EDIT_APPLY");
+    }
 
 
     @Nullable
@@ -161,10 +194,11 @@ public class CustomerDetailsFragment extends AbstractFragment {
 
         view = inflater.inflate(LAYOUT, container, false);
 
+        bottomBar = ((LinearLayout) view.findViewById(R.id.fragment_customer_bottom_bar));
+
         initFields(view, LAYOUT_ID);
         initBottomBar(view);
         fillFields(view);
-
 
         return view;
     }

@@ -1,0 +1,296 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_customer_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".activity.ContactDetailsActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+
+            <!--CardView Name&Status-->
+            <android.support.v7.widget.CardView
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Имя" />
+
+                    <EditText
+                        android:id="@+id/etContactName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:inputType="textMultiLine|textNoSuggestions"
+                        android:longClickable="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Должность" />
+
+                    <EditText
+                        android:id="@+id/etContactStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:inputType="textMultiLine|textNoSuggestions" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                style="@style/CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Телефон" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/etContactPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusableInTouchMode="false"
+                                android:inputType="phone|textNoSuggestions"
+                                android:longClickable="true" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/quick_button_details_activity"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" android:gravity="left">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/flat_button"
+                                android:contentDescription="@string/txtCall"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_call_blue_800_24dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Мобильный телефон" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/etContactMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusableInTouchMode="false"
+                                android:inputType="phone|textNoSuggestions"
+                                android:longClickable="true" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/quick_button_details_activity"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" android:gravity="left">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/flat_button"
+                                android:contentDescription="@string/txtCall"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_call_blue_800_24dp" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/flat_button"
+                                android:contentDescription="@string/txtSMS"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_sms_blue_800_24dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <EditText
+                                android:id="@+id/etContactEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusableInTouchMode="false"
+                                android:inputType="textEmailAddress"
+                                android:longClickable="true" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/quick_button_details_activity"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" android:gravity="left">
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/flat_button"
+                                android:contentDescription="@string/txtCall"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_email_blue_800_24dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/fragment_customer_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/fragment_customer_btnEdit"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_mode_edit_white_24dp"
+            android:padding="@dimen/button_bottom_bar_padding"
+            android:tag="btnTool"
+            android:text="@string/txtEdit"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/fragment_customer_btnMap"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_person_add_white_24dp"
+            android:padding="@dimen/button_bottom_bar_padding"
+            android:tag="btnTool"
+            android:text="@string/txtAddToContacts"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/fragment_customer_btnDelete"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_delete_white_24dp"
+            android:padding="@dimen/button_bottom_bar_padding"
+            android:tag="btnTool"
+            android:text="@string/txtDelete"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/fragment_customer_btnApply"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_check_white_24dp"
+            android:padding="@dimen/button_bottom_bar_padding"
+            android:tag="btnEdit"
+            android:text="@string/txtApply"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/fragment_customer_btnCancel"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_cancel_white_24dp"
+            android:paddingTop="2dp"
+            android:tag="btnEdit"
+            android:text="@string/txtCancel"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -19,7 +19,7 @@ import ru.zintur.mobilebase.utils.Utils;
 public class AbstractDetailsActivity extends AppCompatActivity{
 
 
-    final private static String TAG = "CUSTOMER_FORM";
+    final private static String TAG = "details_activity";
 
     // HashMap of all EditText elements (Form FIELDS)
    SparseArray<EditText> fields = new SparseArray<>();
@@ -74,7 +74,6 @@ public class AbstractDetailsActivity extends AppCompatActivity{
       @Override
       public boolean onLongClick(View v) {
 
-         EditText field = (EditText) v.findViewById(v.getId());
          showPopupMenu(v);
          return false;
       }

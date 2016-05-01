@@ -3,9 +3,11 @@ package ru.zintur.mobilebase.utils;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 
@@ -54,5 +56,11 @@ public class Utils {
             e.printStackTrace();
         }
     }
+
+    public static void hideSystemSoftKeyboard(Context ctx, View view) {
+        InputMethodManager imm = (InputMethodManager) ctx.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
 
 }

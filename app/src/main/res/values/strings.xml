@@ -41,6 +41,11 @@
     <string name="txtCall" />
     <string name="txtSMS">txtSMS</string>
     <string name="txtAddToContacts">Добавить в контакты</string>
+    <string name="txtContactName">Имя</string>
+    <string name="txtContactStatus">Должность</string>
+    <string name="txtPhone">Телефон</string>
+    <string name="txtMobile">Мобильный телефон</string>
+    <string name="txtEmail">Email</string>
 
 
 </resources>

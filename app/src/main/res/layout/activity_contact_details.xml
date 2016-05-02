@@ -115,7 +115,8 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtCall"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_call_blue_800_24dp" />
+                                android:src="@drawable/ic_call_blue_800_24dp"
+                                android:onClick="onBtnCallToPhoneClick"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -155,7 +156,8 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtCall"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_call_blue_800_24dp" />
+                                android:src="@drawable/ic_call_blue_800_24dp"
+                                android:onClick="onBtnCallToMobileClick"/>
 
                             <ImageButton
                                 android:layout_width="wrap_content"
@@ -163,7 +165,8 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtSMS"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_sms_blue_800_24dp" />
+                                android:src="@drawable/ic_sms_blue_800_24dp"
+                                android:onClick="onBtnSendSmsClick"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -204,7 +207,8 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtCall"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_email_blue_800_24dp" />
+                                android:src="@drawable/ic_email_blue_800_24dp"
+                                android:onClick="onBtnSendEmailClick"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -215,7 +219,7 @@
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/fragment_customer_bottom_bar"
+        android:id="@+id/activity_contact_bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -224,7 +228,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/fragment_customer_btnEdit"
+            android:id="@+id/activity_contact_btnEdit"
             style="?attr/borderlessButtonStyle"
             android:layout_width="@dimen/button_bottom_bar_width"
             android:layout_height="wrap_content"
@@ -237,7 +241,7 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/fragment_customer_btnMap"
+            android:id="@+id/activity_contact_btnAddToContacts"
             style="?attr/borderlessButtonStyle"
             android:layout_width="@dimen/button_bottom_bar_width"
             android:layout_height="wrap_content"
@@ -250,7 +254,7 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/fragment_customer_btnDelete"
+            android:id="@+id/activity_contact_btnDelete"
             style="?attr/borderlessButtonStyle"
             android:layout_width="@dimen/button_bottom_bar_width"
             android:layout_height="wrap_content"
@@ -263,7 +267,7 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/fragment_customer_btnApply"
+            android:id="@+id/activity_contact_btnApply"
             style="?attr/borderlessButtonStyle"
             android:layout_width="@dimen/button_bottom_bar_width"
             android:layout_height="wrap_content"
@@ -277,7 +281,7 @@
             android:visibility="gone" />
 
         <Button
-            android:id="@+id/fragment_customer_btnCancel"
+            android:id="@+id/activity_contact_btnCancel"
             style="?attr/borderlessButtonStyle"
             android:layout_width="@dimen/button_bottom_bar_width"
             android:layout_height="wrap_content"

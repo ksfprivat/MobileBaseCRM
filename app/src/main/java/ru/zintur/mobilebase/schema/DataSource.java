@@ -77,5 +77,10 @@ public class DataSource {
                 orderAsc(ContactDao.Properties.Name).list();
     }
 
+    public static String getCustomerLocation(Long customerId) {
+        Customer customer = getCustomersById(customerId);
+        return String.format("%s %s %s", customer.getDistrict() ,customer.getCity(), customer.getStreet());
+    }
+
 
 }

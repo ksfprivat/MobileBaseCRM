@@ -6,7 +6,7 @@
     <dimen name="edit_text_size">16sp</dimen>
     <dimen name="flat_button_text_size">16sp</dimen>
     <dimen name="button_bottom_bar_width">96dp</dimen>
-    <dimen name="button_bottom_bar_padding">6dp</dimen>
+    <dimen name="button_bottom_bar_padding">4dp</dimen>
     <dimen name="quick_button_details_activity">80dp</dimen>
 
 </resources>

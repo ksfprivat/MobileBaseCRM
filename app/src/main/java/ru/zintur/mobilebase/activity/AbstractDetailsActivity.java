@@ -3,11 +3,13 @@ package ru.zintur.mobilebase.activity;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -19,12 +21,16 @@ import ru.zintur.mobilebase.utils.Utils;
 public class AbstractDetailsActivity extends AppCompatActivity{
 
 
-    final private static String TAG = "details_activity";
-
+   final private static String TAG = "details_activity";
     // HashMap of all EditText elements (Form FIELDS)
-   SparseArray<EditText> fields = new SparseArray<>();
 
-   public void initActionBar() {
+
+//   View view;
+   SparseArray<EditText> fields = new SparseArray<>();
+   LinearLayout bottomBar;
+
+
+    public void initActionBar() {
          if(getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
@@ -33,7 +39,7 @@ public class AbstractDetailsActivity extends AppCompatActivity{
 
    public void initFields() {
       // Set longClickListener or all EditText in Layout
-      LinearLayout customerForm = (LinearLayout) findViewById(R.id.fragment_customer_details);
+     LinearLayout customerForm = (LinearLayout) findViewById(R.id.fragment_customer_details);
 
      Utils.findAllEditTexts(customerForm, fields);
       for(int i = 0; i < fields.size(); i++) {
@@ -41,6 +47,34 @@ public class AbstractDetailsActivity extends AppCompatActivity{
          fields.get(key).setOnLongClickListener(longClickListener);
       }
    }
+
+
+    public void bottomBarSwitchMode() {
+        for (int i = 0; i < bottomBar.getChildCount(); i++) {
+            View childView = bottomBar.getChildAt(i);
+            if (childView instanceof Button) {
+                if (childView.getVisibility() == View.GONE) {
+                    childView.setVisibility(View.VISIBLE);
+                } else {
+                    childView.setVisibility(View.GONE);
+                }
+            }
+        }
+    }
+
+
+    public void setEditMode(boolean mode, View view) {
+        Utils.hideSystemSoftKeyboard(this, view);
+
+        bottomBarSwitchMode();
+        for (int i = 0; i < fields.size(); i++) {
+            int key = fields.keyAt(i);
+            fields.get(key).setFocusableInTouchMode(mode);
+            fields.get(key).clearFocus();
+        }
+    }
+
+
 
 
    private void showPopupMenu(View v) {

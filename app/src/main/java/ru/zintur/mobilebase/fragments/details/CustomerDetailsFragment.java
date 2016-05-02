@@ -4,6 +4,8 @@ package ru.zintur.mobilebase.fragments.details;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -161,6 +163,15 @@ public class CustomerDetailsFragment extends AbstractFragment {
                     break;
                 case R.id.fragment_customer_btnMap:
                     Log.d(TAG, "ON_BUTTON_CLICK_MAP");
+
+//                  Intent intent = new Intent(Intent.CATEGORY_APP_MAPS, Uri.parse("http://maps.google.com/maps?q=ЦИНТУР"));
+                    Uri gmmIntentUri = Uri.parse("geo:0,0?q="+DataSource.getCustomerLocation(_customerId));
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    startActivity(mapIntent);
+
+
+
                     break;
                 case R.id.fragment_customer_btnDelete:
                     Log.d(TAG, "ON_BUTTON_CLICK_DELETE");

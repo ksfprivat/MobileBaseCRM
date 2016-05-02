@@ -1,14 +1,18 @@
 package ru.zintur.mobilebase.activity;
 
+import android.content.ContentProviderOperation;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.schema.DataSource;
@@ -64,6 +68,23 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
         }
     }
 
+
+    private void addContact(Contact contact) {
+        Intent contactIntent = new Intent(ContactsContract.Intents.Insert.ACTION);
+        contactIntent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
+
+        contactIntent
+                .putExtra(ContactsContract.Intents.Insert.NAME, contact.getName())
+                .putExtra(ContactsContract.Intents.Insert.JOB_TITLE, contact.getStatus())
+                .putExtra(ContactsContract.Intents.Insert.PHONE, contact.getMobile())
+                .putExtra(ContactsContract.Intents.Insert.SECONDARY_PHONE, contact.getPhone())
+                .putExtra(ContactsContract.Intents.Insert.EMAIL, contact.getEmail())
+                .putExtra(ContactsContract.Intents.Insert.COMPANY, DataSource.getCustomersById(DataSource.getContactById(contactId).getCustomer()).getTitleShort()
+                );
+
+        startActivity(contactIntent);
+    }
+
     View.OnClickListener bottomBarClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -76,6 +97,7 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
                     break;
                 case R.id.activity_contact_btnAddToContacts:
                     Log.d(LOG_TAG, "CONTACT_ADD");
+                    addContact(DataSource.getContactById(contactId));
                     break;
                 case R.id.activity_contact_btnApply:
                     setEditMode(false, v);

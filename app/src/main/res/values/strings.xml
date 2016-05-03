@@ -48,6 +48,7 @@
     <string name="txtEmail">Email</string>
     <string name="txtPhoneIntentFail">Не удается передать номер в приложение</string>
     <string name="txtEmailIntentFail">Ошибка передачи email адреса в приложение</string>
+    <string name="txtSearch">Поиск</string>
 
 
 </resources>

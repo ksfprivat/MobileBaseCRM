@@ -68,7 +68,6 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
         }
     }
 
-
     private void addContact(Contact contact) {
         Intent contactIntent = new Intent(ContactsContract.Intents.Insert.ACTION);
         contactIntent.setType(ContactsContract.RawContacts.CONTENT_TYPE);

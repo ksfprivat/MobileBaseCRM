@@ -15,6 +15,7 @@ import java.util.List;
 
 import ru.zintur.mobilebase.activity.CustomerDetailsActivity;
 import ru.zintur.mobilebase.R;
+import ru.zintur.mobilebase.activity.MainActivity;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.schema.domains.Customer;
 import ru.zintur.mobilebase.schema.DataSource;
@@ -45,16 +46,17 @@ public class CustomerFragment extends AbstractFragment{
         View view = inflater.inflate(LAYOUT, container, false);
 
         List<Customer> customers = DataSource.getCustomers();
-        final CustomerListAdapter adapter = new CustomerListAdapter(container.getContext(), customers);
+//        final CustomerListAdapter adapter = new CustomerListAdapter(container.getContext(), customers);
 
         ListView lvCustomers = (ListView) view.findViewById(R.id.lvCustomers);
-        lvCustomers.setAdapter(adapter);
+
+        lvCustomers.setAdapter(MainActivity.customerListAdapter);
 
         lvCustomers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Customer customer = ((Customer) adapter.getItem(position));
+                Customer customer = ((Customer) MainActivity.customerListAdapter.getItem(position));
 //                Intent intent = new Intent(container.getContext(), CustomerDetailsActivity.class);
                 Intent intent = new Intent(container.getContext(), CustomerDetailsActivity.class);
 

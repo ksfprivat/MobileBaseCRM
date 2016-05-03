@@ -14,12 +14,18 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.CustomerDetailsActivity" />
-        <activity android:name=".activity.ContactDetailsActivity"></activity>
+        <activity android:name=".activity.ContactDetailsActivity" />
+
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable">
+        </meta-data>
+
+
     </application>
 
 </manifest>

@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import ru.zintur.mobilebase.R;
+import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
 import ru.zintur.mobilebase.schema.DataSource;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     public  static CustomerListAdapter customerListAdapter;
+    public  static ContactListAdapter contactListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         intNavigationBar();
         initTabs();
         customerListAdapter = new CustomerListAdapter(this, DataSource.getCustomers());
+        contactListAdapter = new ContactListAdapter(this, DataSource.getContacts());
     }
 
     @Override
@@ -108,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
             drawerLayout.closeDrawers();
+
             switch (item.getItemId()) {
                 case (R.id.navigator_customer_item):
                     viewPager.setCurrentItem(0);
@@ -151,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     customerListAdapter.getFilter().filter(newText);
                     break;
                 case 1:
+                    contactListAdapter.getFilter().filter(newText);
                     break;
                 case 2:
                     break;

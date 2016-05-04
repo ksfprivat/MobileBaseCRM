@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.List;
 
+import de.greenrobot.dao.query.QueryBuilder;
 import ru.zintur.mobilebase.schema.dao.ContactDao;
 import ru.zintur.mobilebase.schema.dao.CustomerDao;
 import ru.zintur.mobilebase.schema.dao.DaoMaster;
@@ -52,8 +53,9 @@ public class DataSource {
 
     public static List<Customer> getCustomers() {
        return getDaoSession().getCustomerDao().
-               queryBuilder().orderAsc(CustomerDao.Properties.TitleShort).list();
-
+               queryBuilder().
+               orderAsc(CustomerDao.Properties.TitleShort).
+               list();
     }
 
     public static Customer getCustomersById(Long id) {
@@ -62,7 +64,10 @@ public class DataSource {
     }
 
     public static List<Contact> getContacts() {
-        return getDaoSession().getContactDao().queryBuilder().orderAsc(ContactDao.Properties.Name).list();
+        return getDaoSession().getContactDao().queryBuilder().
+                where(ContactDao.Properties.Name.notEq("")).
+                orderAsc(ContactDao.Properties.Name).
+                list();
     }
 
 

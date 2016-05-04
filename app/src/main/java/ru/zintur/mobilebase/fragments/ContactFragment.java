@@ -3,7 +3,6 @@ package ru.zintur.mobilebase.fragments;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,11 +15,10 @@ import java.util.List;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.activity.ContactDetailsActivity;
-import ru.zintur.mobilebase.activity.CustomerDetailsActivity;
+import ru.zintur.mobilebase.activity.MainActivity;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.domains.Contact;
-import ru.zintur.mobilebase.schema.domains.Customer;
 
 public class ContactFragment extends AbstractFragment{
 
@@ -54,23 +52,23 @@ public class ContactFragment extends AbstractFragment{
         View view = inflater.inflate(LAYOUT, container, false);
 
         List<Contact> contacts;
+        final ContactListAdapter adapter;
 
-        if (_customerId != null)
+        if (_customerId != null) {
             contacts = DataSource.getContactsByCustomerId(_customerId);
-        else
+            adapter = new ContactListAdapter(container.getContext(), contacts);
+        }
+        else {
             contacts  = DataSource.getContacts();
-
-
-        final ContactListAdapter adapter = new ContactListAdapter(container.getContext(), contacts);
+            adapter = MainActivity.contactListAdapter;
+        }
 
         ListView lvContacts = (ListView) view.findViewById(R.id.lvContacts);
         lvContacts.setAdapter(adapter);
 
-
         lvContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position,
-                                    long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Contact contact = ((Contact) adapter.getItem(position));
                 Intent intent = new Intent(container.getContext(), ContactDetailsActivity.class);
 
@@ -78,10 +76,6 @@ public class ContactFragment extends AbstractFragment{
                 startActivity(intent);
             }
         });
-
-
-
-
 
         return view;
     }

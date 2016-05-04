@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +21,7 @@ import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
-import ru.zintur.mobilebase.dialogs.MessageDialog;
+import ru.zintur.mobilebase.schema.utils.MessageDialog;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.utils.BaseImporter;
 

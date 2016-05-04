@@ -2,20 +2,14 @@ package ru.zintur.mobilebase.fragments;
 
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import ru.zintur.mobilebase.R;
-import ru.zintur.mobilebase.dialogs.MessageDialog;
-import ru.zintur.mobilebase.schema.domains.Customer;
 
 public class ContractFragment extends AbstractFragment{
 

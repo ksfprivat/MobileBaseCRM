@@ -6,8 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.util.SparseArray;
 
-import ru.zintur.mobilebase.activity.MainActivity;
-import ru.zintur.mobilebase.dialogs.MessageDialog;
 import ru.zintur.mobilebase.fragments.AbstractFragment;
 import ru.zintur.mobilebase.fragments.ContactFragment;
 import ru.zintur.mobilebase.fragments.ContractFragment;

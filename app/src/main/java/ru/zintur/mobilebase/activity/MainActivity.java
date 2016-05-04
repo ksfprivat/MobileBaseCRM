@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
+import ru.zintur.mobilebase.dialogs.MessageDialog;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.utils.BaseImporter;
 
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(navigationItemSelectedListener);
 
 // !!! - HACK procedure - set custom navigation icon for toggle button in toolbar
-        setCustomNavigationIcon(toggle, R.drawable.ic_menu_white_36dp);
+        setCustomNavigationIcon(toggle, R.drawable.ic_menu_white_24dp);
     }
 
 
@@ -123,7 +125,26 @@ public class MainActivity extends AppCompatActivity {
 
                 case (R.id.navigator_contract_item):
                     viewPager.setCurrentItem(2);
+                    MessageDialog.underConstructionMsg(MainActivity.this);
                     break;
+                case (R.id.navigator_settings):
+                    MessageDialog.underConstructionMsg(MainActivity.this);
+                    break;
+                case (R.id.navigator_update):
+                    MessageDialog.showDialog(MainActivity.this, getString(R.string.txtUpdates),
+                            String.format("%s: %s\n%s",
+                                    getString(R.string.txtDbVersion),
+                                    DataSource.getVersion(),
+                                    getString(R.string.txtUpdatesNotFound))
+                    );
+                    break;
+
+                case (R.id.navigator_about):
+                    MessageDialog.aboutDialog(MainActivity.this);
+
+                    break;
+
+
             }
             return true;
         }
@@ -163,5 +184,4 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
-
 }

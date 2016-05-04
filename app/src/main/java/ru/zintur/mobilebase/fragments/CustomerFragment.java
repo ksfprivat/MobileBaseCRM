@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -49,7 +52,6 @@ public class CustomerFragment extends AbstractFragment{
 //        final CustomerListAdapter adapter = new CustomerListAdapter(container.getContext(), customers);
 
         ListView lvCustomers = (ListView) view.findViewById(R.id.lvCustomers);
-
         lvCustomers.setAdapter(MainActivity.customerListAdapter);
 
         lvCustomers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,7 +59,7 @@ public class CustomerFragment extends AbstractFragment{
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
                 Customer customer = ((Customer) MainActivity.customerListAdapter.getItem(position));
-//                Intent intent = new Intent(container.getContext(), CustomerDetailsActivity.class);
+
                 Intent intent = new Intent(container.getContext(), CustomerDetailsActivity.class);
 
                 intent.putExtra("customerId", customer.getId());

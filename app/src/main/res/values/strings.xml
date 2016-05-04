@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">MobileBase</string>
+    <string name="app_name">Base</string>
+    <string name="app_version">0.2.8 (betta)</string>
+
+    <string name="app_description">Mobile CRM for Android</string>
+    <string name="app_author">Fedotovskih Konstantin</string>
 
     <string name="app_title">Base</string>
     <string name="app_subtitle">mobile</string>
@@ -32,7 +36,6 @@
     <string name="txtName">Имя</string>
     <string name="txtCompany">Оргазация</string>
     <string name="txtStatus">Должность</string>
-    <string name="LoremIpsum">Lorem Ipsum - это текст-рыба, часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной рыбой для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</string>
     <string name="txtEdit">Изменить</string>
     <string name="txtMap">Карта</string>
     <string name="txtDelete">Удалить</string>
@@ -49,6 +52,12 @@
     <string name="txtPhoneIntentFail">Не удается передать номер в приложение</string>
     <string name="txtEmailIntentFail">Ошибка передачи email адреса в приложение</string>
     <string name="txtSearch">Поиск</string>
+    <string name="txtNoData">Нет данных</string>
+    <string name="txtUnderConstruction">Этот функционал будет добавлен в следующей версии</string>
+    <string name="txtUpdates">Обновления</string>
+    <string name="txtDbVersion">Версия БД</string>
+    <string name="txtUpdatesNotFound">Обновлений необноружено</string>
+    <string name="txtAbout">О программе</string>
 
 
 </resources>

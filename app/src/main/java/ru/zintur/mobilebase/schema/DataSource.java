@@ -19,12 +19,22 @@ public class DataSource {
     private static final String DB_NAME = "base";
 
     private static SQLiteDatabase db;
+    private static String version;
     private static DaoSession session;
+
 
 
     public static void openDatabase(Context ctx) {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(ctx, DB_NAME, null);
         db = helper.getWritableDatabase();
+        //!! TEMPORARY DUMMY !!
+        version = "2015.06.05";
+    }
+
+
+    public static String getVersion() {
+        // Dummy
+        return version;
     }
 
     // if newSession == true return new session else return opened session
@@ -85,4 +95,6 @@ public class DataSource {
         Customer customer = getCustomersById(customerId);
         return String.format("%s %s %s", customer.getDistrict() ,customer.getCity(), customer.getStreet());
     }
+
+
 }

@@ -5,7 +5,9 @@
     <color name="colorAccent">#29B6F6</color>
     <color name="colorTabBar">#0277BD</color>
     <color name="colorBackground">#E0E0E0</color>
-    <color name="colorTabIndicator">#01579B</color>
+    <color name="colorTabIndicator">#004d89</color>
+    <!--<color name="colorTabIndicator">#FFFFFF</color>-->
+
     <color name="colorBlueText">#0288D1</color>
     <color name="colorSelectedItem">#E1F5FE</color>
     <color name="colorEditText">#767676</color>

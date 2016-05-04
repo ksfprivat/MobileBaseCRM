@@ -20,14 +20,17 @@
     </group>
     <group android:id="@+id/menu_operation" >
         <item
+            android:id="@+id/navigator_settings"
             android:orderInCategory="1"
             android:title="@string/nav_item_settings"
             android:icon="@drawable/ic_settings"/>
         <item
+            android:id="@+id/navigator_update"
             android:orderInCategory="1"
             android:title="@string/nav_item_update"
             android:icon="@drawable/ic_refresh"/>
         <item
+            android:id="@+id/navigator_about"
             android:orderInCategory="1"
             android:title="@string/nav_item_nfo"
             android:icon="@drawable/ic_information_outline"/>

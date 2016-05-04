@@ -115,7 +115,7 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtCall"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_call_blue_800_24dp"
+                                android:src="@drawable/ic_call_grey_700_24dp"
                                 android:onClick="onBtnCallToPhoneClick"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -156,7 +156,7 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtCall"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_call_blue_800_24dp"
+                                android:src="@drawable/ic_call_grey_700_24dp"
                                 android:onClick="onBtnCallToMobileClick"/>
 
                             <ImageButton
@@ -165,7 +165,7 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtSMS"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_sms_blue_800_24dp"
+                                android:src="@drawable/ic_sms_grey_700_24dp"
                                 android:onClick="onBtnSendSmsClick"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -207,7 +207,7 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtCall"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_email_blue_800_24dp"
+                                android:src="@drawable/ic_email_grey_700_24dp"
                                 android:onClick="onBtnSendEmailClick"/>
                         </LinearLayout>
                     </LinearLayout>

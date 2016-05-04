@@ -66,6 +66,7 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
         else
             ((TextView) view.findViewById(R.id.txtName)).setText(contact.getName());
 
+        ((TextView) view.findViewById(R.id.txtCompany)).setText(DataSource.getCustomersById(contact.getCustomer()).getTitleShort());
         ((TextView) view.findViewById(R.id.txtStatus)).setText(contact.getStatus());
 
         return view;

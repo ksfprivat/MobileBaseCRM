@@ -1,4 +1,4 @@
-package ru.zintur.mobilebase.schema.utils;
+package ru.zintur.mobilebase.utils;
 
 
 import android.app.Activity;

@@ -25,7 +25,7 @@
     <string name="navigation_close">Закрыть</string>
     <string name="navigation_open">Открыть</string>
     <string name="txtTitleShort">txtTitleShort</string>
-    <string name="txtAddress">txtAddress</string>
+    <string name="txtAddress">Адрес</string>
     <string name="tvCustomerTitleShort">Наименование</string>
     <string name="tvCustomerTitleFull">Полное наименование</string>
     <string name="tvCustomerCity">Город</string>
@@ -58,6 +58,9 @@
     <string name="txtDbVersion">Версия БД</string>
     <string name="txtUpdatesNotFound">Обновлений необноружено</string>
     <string name="txtAbout">О программе</string>
+    <string name="txtCompanyName">Организация</string>
+    <string name="txtNavBarHeaderAppTitle">B A S E</string>
+    <string name="txtUserName">UserName</string>
 
 
 </resources>

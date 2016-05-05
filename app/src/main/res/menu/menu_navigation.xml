@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:id="@+id/menu_category" >
+    <group android:id="@+id/menu_category">
         <item
             android:id="@+id/navigator_customer_item"
             android:orderInCategory="1"
             android:title="@string/nav_item_customers"
-            android:icon="@drawable/ic_bank"/>
+            android:icon="@drawable/ic_company"/>
         <item
             android:id="@+id/navigator_contact_item"
             android:orderInCategory="1"
             android:title="@string/nav_item_contacts"
-            android:icon="@drawable/ic_account_multiple"/>
+            android:icon="@drawable/ic_contact"/>
         <item
             android:id="@+id/navigator_contract_item"
             android:orderInCategory="1"
             android:title="@string/nav_item_contracts"
-            android:icon="@drawable/ic_currency_rub"/>
+            android:icon="@drawable/ic_contract"/>
     </group>
     <group android:id="@+id/menu_operation" >
         <item
@@ -33,6 +33,6 @@
             android:id="@+id/navigator_about"
             android:orderInCategory="1"
             android:title="@string/nav_item_nfo"
-            android:icon="@drawable/ic_information_outline"/>
+            android:icon="@drawable/ic_info"/>
     </group>
 </menu>

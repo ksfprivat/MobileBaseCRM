@@ -54,6 +54,8 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
         ((EditText) findViewById(R.id.etContactPhone)).setText(contact.getPhone());
         ((EditText) findViewById(R.id.etContactMobile)).setText(contact.getMobile());
         ((EditText) findViewById(R.id.etContactEmail)).setText(contact.getEmail());
+        ((EditText) findViewById(R.id.etCompanyTitleShort)).setText(DataSource.getCustomersById(contact.getCustomer()).getTitleShort());
+
     }
 
 

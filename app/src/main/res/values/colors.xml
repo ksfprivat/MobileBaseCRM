@@ -12,4 +12,7 @@
     <color name="colorSelectedItem">#E1F5FE</color>
     <color name="colorEditText">#767676</color>
     <color name="colorButtonBottomBarPressed">#004d89</color>
+    <color name="colorNavBarBackground">#EEEEEE</color>
+    <color name="colorNavHeaderText">#FAFAFA</color>
+
 </resources>

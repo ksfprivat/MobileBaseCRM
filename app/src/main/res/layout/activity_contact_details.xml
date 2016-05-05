@@ -165,7 +165,7 @@
                                 android:background="@drawable/flat_button"
                                 android:contentDescription="@string/txtSMS"
                                 android:padding="4dp"
-                                android:src="@drawable/ic_sms_grey_700_24dp"
+                                android:src="@drawable/ic_message_grey_700_24dp"
                                 android:onClick="onBtnSendSmsClick"/>
                         </LinearLayout>
                     </LinearLayout>

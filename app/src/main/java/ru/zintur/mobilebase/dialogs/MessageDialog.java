@@ -1,4 +1,4 @@
-package ru.zintur.mobilebase.utils;
+package ru.zintur.mobilebase.dialogs;
 
 
 import android.app.Activity;

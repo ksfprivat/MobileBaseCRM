@@ -21,7 +21,7 @@ import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
-import ru.zintur.mobilebase.utils.MessageDialog;
+import ru.zintur.mobilebase.dialogs.MessageDialog;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.utils.BaseImporter;
 

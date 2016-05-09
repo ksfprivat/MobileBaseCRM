@@ -18,7 +18,7 @@ import ru.zintur.mobilebase.activity.ContactDetailsActivity;
 import ru.zintur.mobilebase.activity.MainActivity;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.domains.Contact;
+import ru.zintur.mobilebase.schema.Contact;
 
 public class ContactFragment extends AbstractFragment{
 

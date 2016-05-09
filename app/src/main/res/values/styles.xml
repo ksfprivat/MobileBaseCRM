@@ -5,17 +5,23 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionOverflowButtonStyle">@style/OverFlowButton</item>
-
-        <!-- Popup menu styling-->
-        <!--<item name="android:popupMenuStyle">@style/x_popup_menu_theme</item>-->
-        <!--<item name="android:itemTextAppearance">@style/itemTextStyle.AppTheme</item>-->
-
     </style>
 
 
     <!--Overflow button custom style-->
     <style name="OverFlowButton" parent="@android:style/Widget.Holo.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_menu_white_36dp</item>
+    </style>
+
+
+    <style name="loginColor" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="android:textColorPrimary">#81D4FA</item>
+        <item name="android:textColorHint">#0288D1</item>
+
+        <item name="android:background">#01579B</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

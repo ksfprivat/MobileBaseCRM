@@ -1,6 +1,5 @@
 package ru.zintur.mobilebase.activity;
 
-import android.content.ContentProviderOperation;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,11 +11,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.domains.Contact;
+import ru.zintur.mobilebase.schema.Contact;
 
 public class ContactDetailsActivity extends AbstractDetailsActivity {
 

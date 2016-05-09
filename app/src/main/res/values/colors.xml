@@ -14,5 +14,6 @@
     <color name="colorButtonBottomBarPressed">#004d89</color>
     <color name="colorNavBarBackground">#EEEEEE</color>
     <color name="colorNavHeaderText">#FAFAFA</color>
-
+    <color name="colorLoginActivityText">#FAFAFA</color>
+    <color name="colorLoginFailedText">#40C4FF</color>
 </resources>

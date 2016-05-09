@@ -2,6 +2,7 @@ package ru.zintur.mobilebase.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -16,12 +17,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
 import ru.zintur.mobilebase.adapters.CustomerListAdapter;
 import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
 import ru.zintur.mobilebase.dialogs.MessageDialog;
+import ru.zintur.mobilebase.schema.Config;
 import ru.zintur.mobilebase.schema.DataSource;
 import ru.zintur.mobilebase.schema.utils.BaseImporter;
 
@@ -31,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private ViewPager viewPager;
+    private Config config;
 
     public  static CustomerListAdapter customerListAdapter;
     public  static ContactListAdapter contactListAdapter;
@@ -40,10 +45,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initDataBase();
+        config = DataSource.getConfig(getString(R.string.db_version));
+
         initToolbar();
         intNavigationBar();
         initTabs();
+        initListAdapters();
+
+    }
+
+    private void initListAdapters() {
         customerListAdapter = new CustomerListAdapter(this, DataSource.getCustomers());
         contactListAdapter = new ContactListAdapter(this, DataSource.getContacts());
     }
@@ -66,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView searchClose = (ImageView) searchView.findViewById(android.support.v7.appcompat.R.id.search_close_btn);
         searchClose.setImageResource(R.drawable.ic_clear_white_24dp);
 
+        ((TextView) findViewById(R.id.txtUserName)).setText(config.getUser().toUpperCase());
+
         return true;
     }
 
@@ -77,12 +90,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
-    private void initDataBase() {
-        if (!BaseImporter.checkDataBase())
-            BaseImporter.importDatabase(this);
-
-        DataSource.openDatabase(this);
-    }
 
     private void intNavigationBar() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -183,4 +190,11 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
+    public void onBtnLogoutClick(View view) {
+        DataSource.clearConfig(config);
+        DataSource.saveConfig(config);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 }

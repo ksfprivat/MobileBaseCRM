@@ -6,7 +6,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -23,7 +22,7 @@ import android.widget.PopupMenu;
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.fragments.AbstractFragment;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.schema.Customer;
 import ru.zintur.mobilebase.utils.Utils;
 
 public class CustomerDetailsFragment extends AbstractFragment {

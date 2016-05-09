@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.zintur.mobilebase.R;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.schema.Customer;
 
 
 public class CustomerListAdapter extends BaseAdapter implements Filterable {

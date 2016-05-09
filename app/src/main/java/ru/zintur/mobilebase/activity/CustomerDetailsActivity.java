@@ -5,15 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.CustomerTabsFragmentAdapter;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.domains.Customer;
 
 public class CustomerDetailsActivity extends AbstractDetailsActivity {
 

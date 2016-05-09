@@ -6,13 +6,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.List;
 
-import de.greenrobot.dao.query.QueryBuilder;
+import ru.zintur.mobilebase.schema.dao.ConfigDao;
 import ru.zintur.mobilebase.schema.dao.ContactDao;
 import ru.zintur.mobilebase.schema.dao.CustomerDao;
 import ru.zintur.mobilebase.schema.dao.DaoMaster;
 import ru.zintur.mobilebase.schema.dao.DaoSession;
-import ru.zintur.mobilebase.schema.domains.Contact;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.schema.dao.UserDao;
 
 public class DataSource {
 
@@ -93,7 +92,29 @@ public class DataSource {
 
     public static String getCustomerLocation(Long customerId) {
         Customer customer = getCustomersById(customerId);
-        return String.format("%s %s %s", customer.getDistrict() ,customer.getCity(), customer.getStreet());
+        return String.format("%s %s %s", customer.getDistrict(), customer.getCity(), customer.getStreet());
+    }
+
+    public static User getUser(String user) {
+        return getDaoSession().getUserDao().queryBuilder().where(UserDao.Properties.User.eq(user)).unique();
+    }
+
+    public static Config getConfig(String version) {
+        return getDaoSession().getConfigDao().
+                queryBuilder().
+                where(ConfigDao.Properties.Version.eq(version)).unique();
+    }
+
+    public static void saveConfig(Config config) {
+        if (config != null) {
+            getDaoSession().getConfigDao().update(config);
+        }
+    }
+
+    public static void clearConfig(Config config) {
+        config.setUser("");
+        config.setPassword("");
+        config.setState("");
     }
 
 

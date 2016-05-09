@@ -19,11 +19,33 @@ public class Generator {
 
         schema = new Schema(1, "ru.zintur.mobilebase.schema");
         schema.setDefaultJavaPackageDao("ru.zintur.mobilebase.schema.dao");
-
         addCustomer();
         addContact();
+        addConfig();
+        addUsers();
 
-        new DaoGenerator().generateAll(schema, "../MobileBase/app/src/main/java");
+        new DaoGenerator().generateAll(schema, "../MobileBaseCRM/app/src/main/java");
+    }
+
+
+    private static void addUsers() {
+        customer = schema.addEntity("User");
+        customer.setSkipTableCreation(true);
+        customer.addIdProperty();
+        customer.addStringProperty("user").columnName("user");
+        customer.addStringProperty("password").columnName("password");
+    }
+
+    private static void addConfig() {
+        customer = schema.addEntity("Config");
+        customer.setSkipTableCreation(true);
+        customer.addIdProperty();
+        customer.addStringProperty("state").columnName("state");
+        customer.addStringProperty("user").columnName("user");
+        customer.addStringProperty("password").columnName("password");
+        customer.addStringProperty("version").columnName("version");
+        customer.addStringProperty("uptime").columnName("uptime");
+        customer.addStringProperty("evolution").columnName("evolution");
     }
 
 

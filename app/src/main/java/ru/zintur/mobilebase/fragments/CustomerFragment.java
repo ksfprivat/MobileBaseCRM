@@ -10,17 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
 import ru.zintur.mobilebase.activity.CustomerDetailsActivity;
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.activity.MainActivity;
-import ru.zintur.mobilebase.adapters.CustomerListAdapter;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.schema.Customer;
 import ru.zintur.mobilebase.schema.DataSource;
 
 public class CustomerFragment extends AbstractFragment{

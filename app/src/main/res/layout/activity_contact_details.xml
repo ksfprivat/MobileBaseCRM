@@ -296,7 +296,7 @@
             android:tag="btnTool"
             android:text="@string/txtDelete"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/activity_contact_btnApply"

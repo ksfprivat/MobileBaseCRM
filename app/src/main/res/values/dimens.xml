@@ -8,5 +8,4 @@
     <dimen name="button_bottom_bar_width">96dp</dimen>
     <dimen name="button_bottom_bar_padding">4dp</dimen>
     <dimen name="quick_button_details_activity">64dp</dimen>
-
 </resources>

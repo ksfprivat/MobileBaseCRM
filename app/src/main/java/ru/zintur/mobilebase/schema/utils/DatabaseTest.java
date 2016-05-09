@@ -6,8 +6,8 @@ import android.util.Log;
 
 import java.util.List;
 
-import ru.zintur.mobilebase.schema.domains.Contact;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.schema.Contact;
+import ru.zintur.mobilebase.schema.Customer;
 import ru.zintur.mobilebase.schema.dao.CustomerDao;
 import ru.zintur.mobilebase.schema.dao.DaoMaster;
 import ru.zintur.mobilebase.schema.dao.DaoSession;

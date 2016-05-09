@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Base</string>
     <string name="app_version">0.2.8 (betta)</string>
+    <string name="db_version">1.0</string>
 
     <string name="app_description">Mobile CRM for Android</string>
     <string name="app_author">Fedotovskih Konstantin</string>
 
-    <string name="app_title">Base</string>
+    <string name="app_title">B A S E</string>
     <string name="app_subtitle">mobile</string>
 
     <string name="action_settings">Settings</string>
@@ -61,6 +62,15 @@
     <string name="txtCompanyName">Организация</string>
     <string name="txtNavBarHeaderAppTitle">B A S E</string>
     <string name="txtUserName">UserName</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtUserNameHint">Имя пользователя</string>
+    <string name="txtPasswordHint">Пароль</string>
+    <string name="txtPassword">Пароль</string>
+    <string name="txtStayInSystem">Оставаться в системе</string>
+    <string name="txtUserAccount">Пользователь</string>
+    <string name="txtLoginFailed">Неверное имя пользователя или пароль</string>
+    <string name="txtLogout">Logout</string>
+    <string name="txtCheckEvolutionFailed">База данных устарела - необходимо обновние</string>
 
 
 </resources>

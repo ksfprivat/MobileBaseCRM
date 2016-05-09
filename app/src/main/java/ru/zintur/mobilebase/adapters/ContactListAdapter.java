@@ -15,8 +15,7 @@ import java.util.List;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.domains.Contact;
-import ru.zintur.mobilebase.schema.domains.Customer;
+import ru.zintur.mobilebase.schema.Contact;
 
 public class ContactListAdapter extends BaseAdapter implements Filterable {
 

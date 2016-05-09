@@ -286,6 +286,18 @@
             android:textColor="@android:color/white" />
 
         <Button
+            android:id="@+id/activity_contact_btnSend"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="@dimen/button_bottom_bar_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_bar"
+            android:drawableTop="@drawable/ic_send_white_24dp"
+            android:padding="@dimen/button_bottom_bar_padding"
+            android:tag="btnTool"
+            android:text="@string/txtResend"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white"/>
+        <Button
             android:id="@+id/activity_contact_btnDelete"
             style="?attr/borderlessButtonStyle"
             android:layout_width="@dimen/button_bottom_bar_width"
@@ -297,7 +309,6 @@
             android:text="@string/txtDelete"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@android:color/white"/>
-
         <Button
             android:id="@+id/activity_contact_btnApply"
             style="?attr/borderlessButtonStyle"

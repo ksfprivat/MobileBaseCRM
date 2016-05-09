@@ -83,6 +83,27 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
         startActivity(contactIntent);
     }
 
+
+    private void sendContactBySMS(Contact contact) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"));
+
+
+            intent.putExtra("sms_body",
+                    String.format("%s\n%s\n%s\n%s\n%s\n%s",
+                            contact.getName(),
+                            contact.getStatus(),
+                            DataSource.getCustomersById(DataSource.getContactById(contactId).getCustomer()).getTitleShort(),
+                            contact.getMobile(),
+                            contact.getPhone(),
+                            contact.getEmail()));
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(ContactDetailsActivity.this, R.string.txtPhoneIntentFail, Toast.LENGTH_SHORT).show();
+        }
+    }
+
     View.OnClickListener bottomBarClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -96,6 +117,9 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
                 case R.id.activity_contact_btnAddToContacts:
                     Log.d(LOG_TAG, "CONTACT_ADD");
                     addContact(DataSource.getContactById(contactId));
+                    break;
+                case R.id.activity_contact_btnSend:
+                    sendContactBySMS(DataSource.getContactById(contactId));
                     break;
                 case R.id.activity_contact_btnApply:
                     setEditMode(false, v);

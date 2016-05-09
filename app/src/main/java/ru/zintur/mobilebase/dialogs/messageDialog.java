@@ -10,11 +10,13 @@ import ru.zintur.mobilebase.schema.DataSource;
 
 public class MessageDialog {
 
-    public static void showDialog(Activity activity, String title, String message) {
+    public static void showDialog(Activity activity, String title, String message, boolean showIcon) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle(title);
         builder.setMessage(message);
+        if (showIcon)
+            builder.setIcon(R.mipmap.ic_launcher);
         builder.setCancelable(true);
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
@@ -32,7 +34,7 @@ public class MessageDialog {
                 activity,
                 String.format("%s %s",
                         activity.getString(R.string.app_title), activity.getString(R.string.app_version)),
-                activity.getString(R.string.txtUnderConstruction));
+                activity.getString(R.string.txtUnderConstruction), false);
     }
 
 
@@ -46,7 +48,7 @@ public class MessageDialog {
                         activity.getString(R.string.txtDbVersion),
                         DataSource.getVersion(),
                         activity.getString(R.string.app_author)
-                )
+                ), true
         );
     }
 }

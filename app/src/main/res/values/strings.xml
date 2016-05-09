@@ -71,6 +71,7 @@
     <string name="txtLoginFailed">Неверное имя пользователя или пароль</string>
     <string name="txtLogout">Logout</string>
     <string name="txtCheckEvolutionFailed">База данных устарела - необходимо обновние</string>
+    <string name="txtResend">Переслать</string>
 
 
 </resources>

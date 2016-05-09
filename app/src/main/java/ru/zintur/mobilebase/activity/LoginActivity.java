@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             } else {
                 MessageDialog.showDialog(this, getString(R.string.txtUpdates),
-                                getString(R.string.txtCheckEvolutionFailed));
+                                getString(R.string.txtCheckEvolutionFailed), false);
             }
 
         } else {
@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                 DataSource.saveConfig(config);
             } else {
                 MessageDialog.showDialog(this, getString(R.string.txtUpdates),
-                        getString(R.string.txtCheckEvolutionFailed));
+                        getString(R.string.txtCheckEvolutionFailed), false);
             }
         } else {
 

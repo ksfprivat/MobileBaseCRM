@@ -18,7 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import ru.zintur.mobilebase.R;
 import ru.zintur.mobilebase.adapters.ContactListAdapter;
@@ -27,7 +26,6 @@ import ru.zintur.mobilebase.adapters.TabsFragmentAdapter;
 import ru.zintur.mobilebase.dialogs.MessageDialog;
 import ru.zintur.mobilebase.schema.Config;
 import ru.zintur.mobilebase.schema.DataSource;
-import ru.zintur.mobilebase.schema.utils.BaseImporter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -141,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                             String.format("%s: %s\n%s",
                                     getString(R.string.txtDbVersion),
                                     DataSource.getVersion(),
-                                    getString(R.string.txtUpdatesNotFound))
+                                    getString(R.string.txtUpdatesNotFound)), false
                     );
                     break;
 

@@ -79,8 +79,9 @@ public class CustomerListAdapter extends BaseAdapter implements Filterable {
             if (constraint != null && constraint.length() > 0) {
                 ArrayList<Customer> filterList = new ArrayList<>();
                 for (int i = 0; i < filteredItems.size(); i++) {
-                    if ( (filteredItems.get(i).getTitleShort().toUpperCase() )
-                            .contains(constraint.toString().toUpperCase())) {
+                    if ( (filteredItems.get(i).getTitleShort().toUpperCase() ).contains(constraint.toString().toUpperCase())
+                            || (filteredItems.get(i).getCity().toUpperCase() ).contains(constraint.toString().toUpperCase()))
+                    {
 
                         filterList.add(filteredItems.get(i));
                     }

@@ -44,9 +44,6 @@ public class CustomerFragment extends AbstractFragment{
 
         View view = inflater.inflate(LAYOUT, container, false);
 
-        List<Customer> customers = DataSource.getCustomers();
-//        final CustomerListAdapter adapter = new CustomerListAdapter(container.getContext(), customers);
-
         ListView lvCustomers = (ListView) view.findViewById(R.id.lvCustomers);
         lvCustomers.setAdapter(MainActivity.customerListAdapter);
 

@@ -141,6 +141,17 @@ public class ContactDetailsActivity extends AbstractDetailsActivity {
     // Dummy function - implement this latter
     private void applyEdit() {
 
+        Contact contact = DataSource.getContactById(contactId);
+
+        contact.setName(((EditText) findViewById(R.id.etContactName)).getText().toString());
+        contact.setStatus(((EditText) findViewById(R.id.etContactStatus)).getText().toString());
+        contact.setPhone(((EditText) findViewById(R.id.etContactPhone)).getText().toString());
+        contact.setMobile(((EditText) findViewById(R.id.etContactMobile)).getText().toString());
+        contact.setEmail(((EditText) findViewById(R.id.etContactEmail)).getText().toString());
+
+        DataSource.getDaoSession().getContactDao().update(contact);
+
+        setTitle(contact.getName());
     }
 
 

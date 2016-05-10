@@ -40,7 +40,7 @@ public class ContractFragment extends AbstractFragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(LAYOUT, container, false);
 
-        ListView lvContracts = (ListView) view.findViewById(R.id.lvContracts);
+//        ListView lvContracts = (ListView) view.findViewById(R.id.lvContracts);
 
 
 

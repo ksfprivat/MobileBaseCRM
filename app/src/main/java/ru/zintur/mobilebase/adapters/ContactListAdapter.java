@@ -89,7 +89,9 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
                 ArrayList<Contact> filterList = new ArrayList<>();
                 for (int i = 0; i < filteredItems.size(); i++) {
                     if ( (filteredItems.get(i).getName().toUpperCase() )
-                            .contains(constraint.toString().toUpperCase())) {
+                            .contains(constraint.toString().toUpperCase()) ||
+                            (DataSource.getCustomersById(filteredItems.get(i).getCustomer()).getTitleShort().toUpperCase() )
+                                    .contains(constraint.toString().toUpperCase())) {
 
                         filterList.add(filteredItems.get(i));
                     }

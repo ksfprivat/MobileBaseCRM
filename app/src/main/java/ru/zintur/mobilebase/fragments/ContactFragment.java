@@ -59,7 +59,6 @@ public class ContactFragment extends AbstractFragment{
             adapter = new ContactListAdapter(container.getContext(), contacts);
         }
         else {
-            contacts  = DataSource.getContacts();
             adapter = MainActivity.contactListAdapter;
         }
 

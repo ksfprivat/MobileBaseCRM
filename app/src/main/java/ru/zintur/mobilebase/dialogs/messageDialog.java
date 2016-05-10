@@ -1,12 +1,12 @@
 package ru.zintur.mobilebase.dialogs;
 
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+        import android.app.Activity;
+        import android.content.DialogInterface;
+        import android.support.v7.app.AlertDialog;
 
-import ru.zintur.mobilebase.R;
-import ru.zintur.mobilebase.schema.DataSource;
+        import ru.zintur.mobilebase.R;
+        import ru.zintur.mobilebase.schema.DataSource;
 
 public class MessageDialog {
 

@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             } else {
                 MessageDialog.showDialog(this, getString(R.string.txtUpdates),
-                                getString(R.string.txtCheckEvolutionFailed), false);
+                        getString(R.string.txtCheckEvolutionFailed), false);
             }
 
         } else {
